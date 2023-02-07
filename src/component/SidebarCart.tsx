@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {  Offcanvas } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Cart from './cart/Cart';
 
 type Props ={

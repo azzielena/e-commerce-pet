@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
-import Container from 'react-bootstrap/Container';
 
-import { Route, Routes } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import useFetch from '../../hooks/useFetch';
 import { ProductItem } from '../../types/typeApp';

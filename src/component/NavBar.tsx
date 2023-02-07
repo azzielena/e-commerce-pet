@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import home from './img/home.jpg';
 import { FaShoppingCart } from 'react-icons/fa';
-import { Badge, Button } from 'react-bootstrap';
+import { Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { getTotalItems } from '../helpers/calculate';
 import { CartContext } from '../context/CartContext';
