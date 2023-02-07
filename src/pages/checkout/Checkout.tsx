@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container,  FormCheck,  Row } from 'react-bootstrap';
+import { Container,  Row } from 'react-bootstrap';
 import FormCheckout from '../../component/FormCheckout';
 import OrderSummary from '../../component/OrderSummary';
 
