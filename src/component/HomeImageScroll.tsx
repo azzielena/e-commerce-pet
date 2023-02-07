@@ -3,6 +3,7 @@ import { Carousel } from 'react-bootstrap';
 import logo2 from './img/logo2.jpg'
 import secondImg from './img/omaggio.jpg'
 import thirdImg from './img/contattoImg.png'
+import fourthImg from './img/quartaImg.jpg'
 
 
 function HomeImageScroll() {
@@ -27,6 +28,13 @@ function HomeImageScroll() {
       <img
         className="d-block w-100"
         src={thirdImg}
+        alt="Third slide"
+      />
+    </Carousel.Item>
+    <Carousel.Item interval={2000}>
+      <img
+        className="d-block w-100"
+        src={fourthImg}
         alt="Third slide"
       />
     </Carousel.Item>
