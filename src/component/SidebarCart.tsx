@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import {  Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Cart from './cart/Cart';
 
 type Props ={
     handleClose: (state:boolean) => void
@@ -10,12 +11,12 @@ type Props ={
 const SidebarCart =({handleClose}:Props)=>{
     
   return (  
-    <Offcanvas show={true} onHide={() => handleClose(false)} placement='end' sroll={true}>
+    <Offcanvas show={true} onHide={() => handleClose(false)} placement='end' >
     <Offcanvas.Header closeButton>
-      <Offcanvas.Title>Carrellos</Offcanvas.Title>
+      <Offcanvas.Title>Carrello</Offcanvas.Title>
     </Offcanvas.Header>
     <Offcanvas.Body>
-     cart
+     <Cart />
     </Offcanvas.Body>
   </Offcanvas>
   )

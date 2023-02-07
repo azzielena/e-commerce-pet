@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getProducts from "../component/helpers/getData";
+import getProducts from "../helpers/getData";
 import { ProductFetch, ProductItem } from "../types/typeApp";
 
 const useFetch=()=>{

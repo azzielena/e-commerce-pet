@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,12 +7,17 @@ import home from './img/home.jpg';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Badge, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { getTotalItems } from '../helpers/calculate';
+import { CartContext } from '../context/CartContext';
 
 type Props = {
   handleOpen : (state:boolean) => void;
 }
 
 const NavBar =({ handleOpen }: Props)=>{
+
+  const { cartItems } = useContext(CartContext);
+
   return (  
     <Navbar collapseOnSelect expand="lg"  style={{backgroundColor:"#39c010"}}>
       <Container>
@@ -86,7 +91,7 @@ const NavBar =({ handleOpen }: Props)=>{
           </Nav>
         
           <FaShoppingCart className="login_menu" onClick={() => handleOpen(true)}  /> 
-          <Badge pill bg="danger" style={{float: "right"}}> 8</Badge>
+          <Badge pill bg="danger" style={{float: "right"}}> {getTotalItems(cartItems)}</Badge>
         </Navbar.Collapse>
       </Container>
     </Navbar>
