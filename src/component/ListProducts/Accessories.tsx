@@ -14,6 +14,7 @@ function Accessories({product, handleAddToCart}: Props) {
         <Card.Img variant="top" src={product.Img} className="img-card"  />
         <Card.Body>
           <Card.Title className="title-card">{product.Nome}</Card.Title>
+          <Card.Subtitle className="subtitle-card">{product.Marca}</Card.Subtitle> <br></br>
           <Card.Text className="description-card">
             {product.Descrizione}
           </Card.Text>

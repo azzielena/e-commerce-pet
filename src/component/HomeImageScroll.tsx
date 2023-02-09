@@ -1,9 +1,10 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import logo2 from './img/logo2.jpg'
+import logo from './img/petstore.jpg'
 import secondImg from './img/omaggio.jpg'
 import thirdImg from './img/contattoImg.png'
-import fourthImg from './img/quartaImg.jpg'
+import fourthImg from './img/banner1.png'
+import fifthImg from './img/banner2.jpg'
 
 
 function HomeImageScroll() {
@@ -13,8 +14,9 @@ function HomeImageScroll() {
     <Carousel.Item interval={2000}  >
       <img
         className="d-block w-100"
-        src={logo2}
+        src={logo}
         alt="First slide"
+        //style={{width: "1400px", height: "430px"}}
       />
     </Carousel.Item>
     <Carousel.Item interval={2000}>
@@ -22,6 +24,7 @@ function HomeImageScroll() {
         className="d-block w-100"
         src={secondImg}
         alt="Second slide"
+        //style={{width: "1400px", height: "430px"}}
       />
     </Carousel.Item>
     <Carousel.Item interval={2000}>
@@ -29,15 +32,18 @@ function HomeImageScroll() {
         className="d-block w-100"
         src={thirdImg}
         alt="Third slide"
+        //style={{width: "1400px", height: "430px"}}
       />
     </Carousel.Item>
     <Carousel.Item interval={2000}>
       <img
         className="d-block w-100"
         src={fourthImg}
-        alt="Third slide"
+        alt="Fourth slide"
+        //style={{width: "1400px", height: "430px"}}
       />
     </Carousel.Item>
+    
   </Carousel>
   );
 }
