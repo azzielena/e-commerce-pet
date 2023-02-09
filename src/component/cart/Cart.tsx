@@ -13,7 +13,7 @@ if(!cartItems.length) return <h5>Non hai selezionato prodotti</h5>;
         <div className="shopping-cart">
         {
             cartItems.map(item => (
-            <Item key={ item.id } item={item} />
+            <Item key={ item.Id } item={item} />
         ))
         }
         <FooterCart />

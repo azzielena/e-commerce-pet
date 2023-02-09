@@ -5,8 +5,6 @@ export type ProductFetch={
 }
 
 
-
-
 export type ProductItem ={ //food
     Id:number;
     Nome: string;
@@ -23,10 +21,15 @@ export type ProductItem ={ //food
 }
 
 export type CartItem = {
-    id?:number;
-    title:string;
-    image?:string;
-    price:number;
+    Id:number;
+    Nome: string;
+    Marca:string;
+    Consistenza:string;
+    Age:number;
+    Taglia:number;
+    Prezzo:number;
+    Kg: number;
+    Img: string;
     amount:number;
 }
 

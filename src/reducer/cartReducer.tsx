@@ -5,10 +5,10 @@ const cartReducer =(state:CartItem[], action:CartActionReducer) =>{
     switch(action.type){
         
         case 'ADD': 
-            const existProduct=state.find(item => item.id === action.payload.id);
+            const existProduct=state.find(item => item.Id === action.payload.Id);
             if(existProduct){
                 return state.map(item =>{
-                    if(item.id === action.payload.id){
+                    if(item.Id === action.payload.Id){
                         return {
                             ...item,
                             amount:item.amount + 1,
@@ -17,13 +17,13 @@ const cartReducer =(state:CartItem[], action:CartActionReducer) =>{
                     return item;
                 });
             } else{
-                const {id, title, image, price} = action.payload;
-                return [...state, {id, title,image, price, amount:1 }];
+                const {Id, Nome, Marca, Consistenza, Age, Taglia, Prezzo, Kg, Img} = action.payload;
+                return [...state, {Id, Nome, Marca, Consistenza, Age, Taglia, Prezzo, Kg, Img, amount:1 }];
             }
 
         case 'REMOVE': 
             return state.reduce((acum,item) => {
-                if (item.id === action.payload){
+                if (item.Id === action.payload){
                     if(item.amount===1) return acum;
                     else return [...acum, {...item, amount:item.amount-1}];
                 }
@@ -31,7 +31,7 @@ const cartReducer =(state:CartItem[], action:CartActionReducer) =>{
             }, [] as CartItem[]);
 
         case 'REMOVE-ALL': 
-            return state.filter(item => item.id !== action.payload);
+            return state.filter(item => item.Id !== action.payload);
         
         case 'CLEAR': 
             return [];

@@ -12,11 +12,22 @@ const useFetch=()=>{
     useEffect(()=>{
         fetch("/getfood")
       .then((res) => res.json())
-      .then((data) => setData({products:data,
+      .then((data) => setData({
+        products:data,
         isLoading:false,
-        isError:false}));
+        isError:false}))
+        .catch (err =>{
+            console.log("error");
+            setData({
+                products:[],
+                isLoading:false,
+                isError:true
+            })
+        }) 
+        ;
   }, []);
-  return data;
+    
+    return data;
        /* getProducts()
         .then((data)=>{
            
