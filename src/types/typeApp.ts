@@ -4,15 +4,12 @@ export type ProductFetch={
     isError: boolean;
 }
 
-<<<<<<< HEAD
 export type AccessoriesFetch={
     products:AccessoriesItem[],
     isLoading: boolean;
     isError: boolean;
 }
 
-=======
->>>>>>> 3ac9339a370b3905ce228311342434d6d3366277
 
 export type ProductItem ={ //food
     Id:number;
