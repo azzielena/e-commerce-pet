@@ -4,13 +4,22 @@ export type ProductFetch={
     isError: boolean;
 }
 
-export type ProductItem ={
-    id:number;
-    category:string;
-    title:string;
-    image:string;
-    description:string;
-    price:number;
+
+
+
+export type ProductItem ={ //food
+    Id:number;
+    Nome: string;
+    Marca:string;
+    Consistenza:string;
+    Age:number;
+    Taglia:number;
+    Specie:number;
+    Prezzo:number;
+    Descrizione: string;
+    Kg: number;
+    Recensione:number;
+    Img: string;
 }
 
 export type CartItem = {

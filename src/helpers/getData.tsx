@@ -1,5 +1,5 @@
 const getProducts =async ()=>{
-    const response= await fetch('https://fakestoreapi.com/products');
+    const response= await fetch('http://localhost:3001/getfood');
     const data=await response.json();
     return data;
 }

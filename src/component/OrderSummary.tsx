@@ -10,8 +10,8 @@ const OrderSummary = () => {
     return (
         <div className='col-md-5 col-lg-4 order-md-last'>
             <h4 className='d-flex justify-content-between align-items-center mb-3'>
-                <span className='text-primary'>Riepilogo dell'ordine</span>
-                <span className='badge bg-primary rounded-pill'>{getTotalItems(cartItems)}</span>
+                <span className='text-dark'>Riepilogo dell'ordine</span>
+                <span className='badge bg-danger rounded-pill'>{getTotalItems(cartItems)}</span>
             </h4>
             <ul className='list-group mb-3'>
                 {

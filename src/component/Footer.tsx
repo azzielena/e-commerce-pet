@@ -13,7 +13,7 @@ import { FaMailBulk } from 'react-icons/fa';
 
 function Footer() {
   return (  
-    <div style={{width: "100%", backgroundColor: "#39c010", marginTop: "60px", bottom: "0", height: "40px" }}>
+    <div style={{width: "100%", backgroundColor: "#39c010", marginTop: "60px", bottom: "0px", height: "40px"}}>
     <footer className='footer'>
         <div style={{padding: "25px", fontSize: "18px"}}>
             

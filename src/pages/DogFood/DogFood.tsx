@@ -4,12 +4,16 @@ import ListProducts from '../../component/ListProducts/ListProduct';
 import CheckFoodDog from '../../component/CheckFoodDog';
 import MenuOffCanvasDog from '../../component/MenuOffCanvasDog';
 import '../../App.css'
+import FiltersDog from '../../component/FiltersDog';
+import Footer from '../../component/Footer';
 
 function DogFood() {
   return (  
     <div>
-      <MenuOffCanvasDog /> 
-      <Container className="mt-3 viewProduct" > <ListProducts />
+      <FiltersDog />
+      <Container className="mt-3 viewProduct" style={{float:"right", width:"80%"}} > 
+        <ListProducts />
+        <Footer  />
       </Container>
     </div>
     

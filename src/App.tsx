@@ -10,6 +10,15 @@ import { CartProvider } from './context/CartContext';
 function App() {
   const [show, setShow] = useState(false);
 
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
+
+
   return (  
     <div>
       <Router> 
@@ -18,7 +27,6 @@ function App() {
         {show && <SidebarCart handleClose={ setShow } /> }
         </CartProvider>
         </Router>
-      <Footer />
     </div>
   );
 }

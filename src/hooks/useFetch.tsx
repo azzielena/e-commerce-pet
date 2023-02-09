@@ -10,11 +10,19 @@ const useFetch=()=>{
     });
 
     useEffect(()=>{
-        getProducts ()
-        .then(data =>{
+        fetch("/getfood")
+      .then((res) => res.json())
+      .then((data) => setData({products:data,
+        isLoading:false,
+        isError:false}));
+  }, []);
+  return data;
+       /* getProducts()
+        .then((data)=>{
            
             const customData= data.map((product: ProductItem) => ({...product, description: product.description.substring(0,55)}) )
-
+            console.log("c:"+customData);
+            
             setData({
                 products:data,
                 isLoading:false,
@@ -22,7 +30,9 @@ const useFetch=()=>{
             })
         })
         .catch (err =>{
+            console.log("error");
             setData({
+                
                 products:[],
                 isLoading:false,
                 isError:true
@@ -30,7 +40,7 @@ const useFetch=()=>{
         })
     },[]);
     
-    return data;
+    return data;*/
 }
 
 
