@@ -4,12 +4,15 @@ export type ProductFetch={
     isError: boolean;
 }
 
+<<<<<<< HEAD
 export type AccessoriesFetch={
     products:AccessoriesItem[],
     isLoading: boolean;
     isError: boolean;
 }
 
+=======
+>>>>>>> 3ac9339a370b3905ce228311342434d6d3366277
 
 export type ProductItem ={ //food
     Id:number;
@@ -39,10 +42,15 @@ export type AccessoriesItem ={ //accessori
 }
 
 export type CartItem = {
-    id?:number;
-    title:string;
-    image?:string;
-    price:number;
+    Id:number;
+    Nome: string;
+    Marca:string;
+    Consistenza:string;
+    Age:number;
+    Taglia:number;
+    Prezzo:number;
+    Kg: number;
+    Img: string;
     amount:number;
 }
 

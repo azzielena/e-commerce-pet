@@ -17,13 +17,13 @@ const OrderSummary = () => {
                 {
                     cartItems.map(item => (
                         <li
-                            key={item.id}
+                            key={item.Id}
                             className='list-group-item d-flex justify-content-between lh-sm'>
                             <div>
-                                <h6 className='my-0'>{ item.title }</h6>
+                                <h6 className='my-0'>{ item.Nome }</h6>
                                 <small className='text-muted'>Quantità: { item.amount }</small>
                             </div>       
-                            <div className="text-muted">${item.price}</div>  
+                            <div className="text-muted">${item.Prezzo}</div>  
                         </li>
                     ))
                 }

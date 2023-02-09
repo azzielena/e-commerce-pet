@@ -26,7 +26,7 @@ const Item = ({item}: Props) => {
                 </Button>
                 <span> {item.amount}</span>
                 <Button variant="secondary" onClick={() => dispatch({
-                    payload:item.id,
+                    payload:item.Id,
                     type:'REMOVE'
                 })} >
                    <FaMinus color="white" /> 
@@ -35,20 +35,20 @@ const Item = ({item}: Props) => {
             </div>
             <div className="item-detail">
                 <div className="item-detail-image">
-                    <img src={item.image} alt={item.title} />
+                    <img src={item.Img} alt={item.Nome} />
                 </div>
                 <div className="item-detail-info">
                     <div className="item-detail-info-name">
-                      {item.title}
+                      {item.Nome}
                     </div>
                     <div className="item-detail-info-prices">
-                      <span>${item.price}</span>
+                      <span>${item.Prezzo}</span>
                     </div>
                 </div>
             </div>
             <div className='item-action-remove'>
                 <Button variant="danger" title="Elimina prodotto"  onClick={() => dispatch({
-                    payload:item.id,
+                    payload:item.Id,
                     type:'REMOVE-ALL'
                 })} >
                 <FaTrashAlt color="white" />
