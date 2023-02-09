@@ -20,11 +20,23 @@ const NavigationHeader =({ handleOpen }: Props)=>{
         <Routes > 
         <Route  path='/' element={<Home />}/>
         <Route  path='/checkout' element={<Checkout />}/>
-        <Route  path='/dogfood' element={<DogFood />}/>
-        <Route  path='/catfood' element={<CatFood />}/>
-        <Route  path='/dogaccessories' element={<DogAccessories />}/>
-        <Route  path='/cataccessories' element={<CatAccessories val={""}/>}/>
-        <Route  path='/cataccessories/gioco' element={<CatAccessories val={"gioco"} />}/>
+        <Route  path='/dogfood' element={<DogFood val={"cibocane"}/>}/>
+        <Route  path='/dogfood/umido' element={<DogFood val={"umidocane"}/>}/>
+        <Route  path='/dogfood/secco' element={<DogFood val={"seccocane"} />}/>
+        <Route  path='/catfood' element={<CatFood val={"cibogatto"}/>}/>
+        <Route  path='/catfood/umido' element={<CatFood val={"umidogatto"}/>}/>
+        <Route  path='/catfood/secco' element={<CatFood val={"seccogatto"}/>}/>
+        <Route  path='/dogaccessories' element={<DogAccessories val={"alldog"}/>}/>
+        <Route  path='/cataccessories' element={<CatAccessories val={"allcat"}/>}/>
+        <Route  path='/cataccessories/gioco' element={<CatAccessories val={"giocogatto"} />}/>
+        <Route  path='/cataccessories/tiragraffi' element={<CatAccessories val={"tiragraffi"} />}/>
+        <Route  path='/cataccessories/lettiera' element={<CatAccessories val={"lettiera"} />}/>
+        <Route  path='/cataccessories/ciotola' element={<CatAccessories val={"ciotolagatto"} />}/>
+        <Route  path='/dogaccessories/gioco' element={<DogAccessories val={"giococane"} />}/>
+        <Route  path='/dogaccessories/guinzaglio' element={<DogAccessories val={"guinzaglio"} />}/>
+        <Route  path='/dogaccessories/collare' element={<DogAccessories val={"collare"} />}/>
+        <Route  path='/dogaccessories/ciotola' element={<DogAccessories val={"ciotolacane"} />}/>
+        
         </Routes>
     </>
    

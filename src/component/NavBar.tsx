@@ -35,11 +35,11 @@ const NavBar =({ handleOpen }: Props)=>{
           <Nav className="me-auto" style={{fontSize: "20px"}}>
 
             <NavDropdown title="Cibo per cani" id="collasible-nav-dropdown" >
-              <Link to='/dogfood' > 
+              <Link to='/dogfood/umido' > 
               <NavDropdown.Item href="/dogfood" >Cibo umido</NavDropdown.Item>
               </Link>
               
-              <Link to='/dogfood' >
+              <Link to='/dogfood/secco' >
               <NavDropdown.Item href="#action/3.3">Cibo secco</NavDropdown.Item>
               </Link>
 
@@ -53,10 +53,10 @@ const NavBar =({ handleOpen }: Props)=>{
             </NavDropdown>
 
             <NavDropdown title="Cibo per gatti" id="collasible-nav-dropdown">
-              <Link to='/catfood'><NavDropdown.Item href="#action/3.2">
+              <Link to='/catfood/umido'><NavDropdown.Item href="#action/3.2">
                 Cibo umido
               </NavDropdown.Item></Link>
-              <Link to='/catfood'><NavDropdown.Item href="#action/3.3">Cibo secco</NavDropdown.Item></Link>
+              <Link to='/catfood/secco'><NavDropdown.Item href="#action/3.3">Cibo secco</NavDropdown.Item></Link>
               <NavDropdown.Divider />
               <Link to='/catfood'><NavDropdown.Item href="#action/3.4">
                 Visualizza tutti
@@ -64,10 +64,10 @@ const NavBar =({ handleOpen }: Props)=>{
             </NavDropdown>
 
             <NavDropdown title="Accessori per cani" id="collasible-nav-dropdown">
-            <Link to='/dogaccessories'><NavDropdown.Item href="#action/3.2">Gioco</NavDropdown.Item></Link>
-            <Link to='/dogaccessories'><NavDropdown.Item href="#action/3.3">Guinzaglio</NavDropdown.Item></Link>
-            <Link to='/dogaccessories'><NavDropdown.Item href="#action/3.4">Collare</NavDropdown.Item></Link>
-            <Link to='/dogaccessories'><NavDropdown.Item href="#action/3.5">Ciotola</NavDropdown.Item></Link>
+            <Link to='/dogaccessories/gioco'><NavDropdown.Item href="#action/3.2" >Gioco</NavDropdown.Item></Link>
+            <Link to='/dogaccessories/guinzaglio'><NavDropdown.Item href="#action/3.3">Guinzaglio</NavDropdown.Item></Link>
+            <Link to='/dogaccessories/collare'><NavDropdown.Item href="#action/3.4">Collare</NavDropdown.Item></Link>
+            <Link to='/dogaccessories/ciotola'><NavDropdown.Item href="#action/3.5">Ciotola</NavDropdown.Item></Link>
               <NavDropdown.Divider />
               <Link to='/dogaccessories'><NavDropdown.Item href="#action/3.6">
                 Visualizza tutti
@@ -77,9 +77,9 @@ const NavBar =({ handleOpen }: Props)=>{
 
             <NavDropdown title="Accessori per gatti" id="collasible-nav-dropdown">
             <Link to='/cataccessories/gioco'><NavDropdown.Item href="#action/3.2">Gioco</NavDropdown.Item></Link>
-            <Link to='/cataccessories'><NavDropdown.Item href="#action/3.3">Tiragraffi</NavDropdown.Item></Link>
-            <Link to='/cataccessories'><NavDropdown.Item href="#action/3.4">Lettiera</NavDropdown.Item></Link>
-            <Link to='/cataccessories'><NavDropdown.Item href="#action/3.5">Ciotola</NavDropdown.Item></Link>
+            <Link to='/cataccessories/tiragraffi'><NavDropdown.Item href="#action/3.3">Tiragraffi</NavDropdown.Item></Link>
+            <Link to='/cataccessories/lettiera'><NavDropdown.Item href="#action/3.4">Lettiera</NavDropdown.Item></Link>
+            <Link to='/cataccessories/ciotola'><NavDropdown.Item href="#action/3.5">Ciotola</NavDropdown.Item></Link>
               <NavDropdown.Divider />
               <Link to='/cataccessories'><NavDropdown.Item href="#action/3.6">
                 Visualizza tutti

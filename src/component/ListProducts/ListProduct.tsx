@@ -6,9 +6,9 @@ import { ProductItem } from '../../types/typeApp';
 import Products from './Products';
 
 
-const ListProducts =()=>{
+const ListProducts =(val:any)=>{
     const {dispatch} = useContext (CartContext);
-    const { products, isLoading } = useFetch();
+    const { products, isLoading } = useFetch(val);
     
     const handleAddToCart = (product:ProductItem) => {
       dispatch({

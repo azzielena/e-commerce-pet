@@ -7,19 +7,29 @@ import '../../App.css'
 import FiltersDog from '../../component/FiltersDog';
 import Footer from '../../component/Footer';
 
-function DogFood() {
+function DogFood(val:any) {
   return (  
     <div>
+      <MenuOffCanvasDog />
+      <Container className="mt-3 viewProduct">
+            <ListProducts v={val}/>
+      </Container>
+    </div>
+
+
+    /*
+    <div>
+      
       <Container>
         <Row>
           <FiltersDog />
           <Container className="mt-3 col-md-5 col-lg-4 viewProduct">
-            <ListProducts />
+            <ListProducts v={val}/>
           </Container>
         </Row>
       </Container>
 
-    </div>
+    </div>*/
   )
 }
 

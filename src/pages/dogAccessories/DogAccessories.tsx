@@ -3,7 +3,7 @@ import cane from '../../component/img/cane.jpg'
 import { Container } from 'react-bootstrap';
 import ListAccessories from '../../component/ListProducts/ListAccessories';
 
-function DogAccessories() {
+function DogAccessories(val:any) {
   return (  
     <div>
       <div style={{ textAlign: "center"}}>
@@ -13,7 +13,7 @@ function DogAccessories() {
               alt="cane"
             />
       </div>
-      <Container className="mt-3 viewProduct"> <ListAccessories val={" "}/>
+      <Container className="mt-3 viewProduct"> <ListAccessories v={val} />
       </Container>
     </div>
     

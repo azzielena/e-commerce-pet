@@ -2,7 +2,7 @@ import React from 'react';
 import gatto from '../../component/img/gatto.jpg'
 import { Container } from 'react-bootstrap';
 import ListAccessories from '../../component/ListProducts/ListAccessories';
-import Footer from '../../component/Footer';
+
 
 
 function CatAccessories(val:any) {

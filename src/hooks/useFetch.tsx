@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import getProducts from "../helpers/getData";
 import { ProductFetch } from "../types/typeApp";
 
-const useFetch=()=>{
+const useFetch=(val: any)=>{
     const [data,setData]= useState<ProductFetch>({
         products: [],
         isLoading: true,
@@ -10,21 +10,57 @@ const useFetch=()=>{
     });
 
     useEffect(()=>{
-        fetch("/getfood")
-      .then((res) => res.json())
-      .then((data) => setData({
-        products:data,
-        isLoading:false,
-        isError:false}))
-        .catch (err =>{
-            console.log("error");
-            setData({
-                products:[],
-                isLoading:false,
-                isError:true
-            })
-        }) 
-        ;
+
+        if(JSON.stringify(val)==='{"v":{"val":"cibocane"}}'){
+            fetch("/getDogFood")
+            .then((res) => res.json())
+            .then((data) => setData({
+            products:data,
+            isLoading:false,
+            isError:false}));}
+
+        else if(JSON.stringify(val)==='{"v":{"val":"seccocane"}}'){
+            fetch("/getDogFoodSecco")
+            .then((res) => res.json())
+            .then((data) => setData({
+            products:data,
+            isLoading:false,
+            isError:false}));
+        }
+
+        else if(JSON.stringify(val)==='{"v":{"val":"umidocane"}}'){
+            fetch("/getDogFoodUmido")
+            .then((res) => res.json())
+            .then((data) => setData({
+            products:data,
+            isLoading:false,
+            isError:false}));
+        }
+
+        else if(JSON.stringify(val)==='{"v":{"val":"cibogatto"}}'){
+            fetch("/getCatFood")
+            .then((res) => res.json())
+            .then((data) => setData({
+            products:data,
+            isLoading:false,
+            isError:false}));}
+
+        else if(JSON.stringify(val)==='{"v":{"val":"seccogatto"}}'){
+            fetch("/getCatFoodSecco")
+            .then((res) => res.json())
+            .then((data) => setData({
+            products:data,
+            isLoading:false,
+            isError:false}));}
+
+        else if(JSON.stringify(val)==='{"v":{"val":"umidogatto"}}'){
+            fetch("/getCatFoodUmido")
+            .then((res) => res.json())
+            .then((data) => setData({
+            products:data,
+            isLoading:false,
+            isError:false}));}
+
   }, []);
     
     return data;
