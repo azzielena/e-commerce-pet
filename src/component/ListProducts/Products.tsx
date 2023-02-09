@@ -26,4 +26,8 @@ function Products({product, handleAddToCart}: Props) {
   )
 }
 
+
 export default Products;
+
+
+

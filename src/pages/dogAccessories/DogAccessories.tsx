@@ -1,7 +1,7 @@
 import React from 'react';
 import cane from '../../component/img/cane.jpg'
 import { Container } from 'react-bootstrap';
-import ListProducts from '../../component/ListProducts/ListProduct';
+import ListAccessories from '../../component/ListProducts/ListAccessories';
 
 function DogAccessories() {
   return (  
@@ -13,7 +13,7 @@ function DogAccessories() {
               alt="cane"
             />
       </div>
-      <Container className="mt-3 viewProduct"> <ListProducts />
+      <Container className="mt-3 viewProduct"> <ListAccessories />
       </Container>
     </div>
     

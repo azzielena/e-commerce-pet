@@ -1,7 +1,7 @@
 import React from 'react';
 import gatto from '../../component/img/gatto.jpg'
 import { Container } from 'react-bootstrap';
-import ListProducts from '../../component/ListProducts/ListProduct';
+import ListAccessories from '../../component/ListProducts/ListAccessories';
 
 function CatAccessories() {
   return (  
@@ -12,7 +12,7 @@ function CatAccessories() {
         alt="gatto"
         style={{width: "400px", height: "400px"}}
       /></div>
-      <Container className="mt-3 viewProduct" > <ListProducts />
+      <Container className="mt-3 viewProduct" > <ListAccessories />
       </Container>
     </div>
     

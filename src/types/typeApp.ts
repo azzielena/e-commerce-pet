@@ -4,7 +4,11 @@ export type ProductFetch={
     isError: boolean;
 }
 
-
+export type AccessoriesFetch={
+    products:AccessoriesItem[],
+    isLoading: boolean;
+    isError: boolean;
+}
 
 
 export type ProductItem ={ //food
@@ -18,6 +22,18 @@ export type ProductItem ={ //food
     Prezzo:number;
     Descrizione: string;
     Kg: number;
+    Recensione:number;
+    Img: string;
+}
+
+export type AccessoriesItem ={ //accessori
+    Id:number;
+    Nome: string;
+    Marca:string;
+    Tipo:string;
+    Specie:number;
+    Prezzo:number;
+    Descrizione: string;
     Recensione:number;
     Img: string;
 }
