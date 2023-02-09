@@ -22,7 +22,7 @@ const useAFetch=(val:any)=>{
         }
 
         if (JSON.stringify(val)==='{"v":{"val":"alldog"}}'){
-            fetch("/getCatAccessories")
+            fetch("/getDogAccessories")
               .then((res) => res.json())
               .then((data) => setData({products:data,
               isLoading:false,
