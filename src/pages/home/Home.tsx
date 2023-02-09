@@ -9,7 +9,6 @@ function Home() {
     <div>
       <HomeImageScroll />
       <SearchBar />
-      <Footer  />
     </div>
   )
 }

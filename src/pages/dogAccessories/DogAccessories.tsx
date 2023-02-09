@@ -13,7 +13,7 @@ function DogAccessories() {
               alt="cane"
             />
       </div>
-      <Container className="mt-3 viewProduct"> <ListAccessories />
+      <Container className="mt-3 viewProduct"> <ListAccessories val={" "}/>
       </Container>
     </div>
     

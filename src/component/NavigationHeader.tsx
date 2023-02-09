@@ -23,7 +23,8 @@ const NavigationHeader =({ handleOpen }: Props)=>{
         <Route  path='/dogfood' element={<DogFood />}/>
         <Route  path='/catfood' element={<CatFood />}/>
         <Route  path='/dogaccessories' element={<DogAccessories />}/>
-        <Route  path='/cataccessories' element={<CatAccessories />}/>
+        <Route  path='/cataccessories' element={<CatAccessories val={""}/>}/>
+        <Route  path='/cataccessories/gioco' element={<CatAccessories val={"gioco"} />}/>
         </Routes>
     </>
    

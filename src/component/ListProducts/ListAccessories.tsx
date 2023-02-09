@@ -6,9 +6,9 @@ import { AccessoriesItem } from '../../types/typeApp';
 import Accessories from './Accessories';
 
 
-const ListAccessories =()=>{
+const ListAccessories =(val:any)=>{
     const {dispatch} = useContext (CartContext);
-    const { products, isLoading } = useAFetch();
+    const { products, isLoading } = useAFetch(val);
     
     const handleAddToCart = (product:AccessoriesItem) => {
       dispatch({

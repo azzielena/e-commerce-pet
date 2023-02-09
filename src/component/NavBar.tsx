@@ -76,7 +76,7 @@ const NavBar =({ handleOpen }: Props)=>{
 
 
             <NavDropdown title="Accessori per gatti" id="collasible-nav-dropdown">
-            <Link to='/cataccessories'><NavDropdown.Item href="#action/3.2">Giocos</NavDropdown.Item></Link>
+            <Link to='/cataccessories/gioco'><NavDropdown.Item href="#action/3.2">Gioco</NavDropdown.Item></Link>
             <Link to='/cataccessories'><NavDropdown.Item href="#action/3.3">Tiragraffi</NavDropdown.Item></Link>
             <Link to='/cataccessories'><NavDropdown.Item href="#action/3.4">Lettiera</NavDropdown.Item></Link>
             <Link to='/cataccessories'><NavDropdown.Item href="#action/3.5">Ciotola</NavDropdown.Item></Link>

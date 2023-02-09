@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import ListProducts from '../../component/ListProducts/ListProduct';
 import CheckFoodDog from '../../component/CheckFoodDog';
 import MenuOffCanvasDog from '../../component/MenuOffCanvasDog';
@@ -10,13 +10,16 @@ import Footer from '../../component/Footer';
 function DogFood() {
   return (  
     <div>
-      <FiltersDog />
-      <Container className="mt-3 viewProduct" style={{float:"right", width:"80%"}} > 
-        <ListProducts />
-        <Footer  />
+      <Container>
+        <Row>
+          <FiltersDog />
+          <Container className="mt-3 col-md-5 col-lg-4 viewProduct">
+            <ListProducts />
+          </Container>
+        </Row>
       </Container>
+
     </div>
-    
   )
 }
 

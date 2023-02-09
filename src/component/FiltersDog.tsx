@@ -6,8 +6,8 @@ import { Container } from 'react-bootstrap';
 
 function DogFood() {
   return (  
-    <Container style={{width:"20%", float: "left"}}>
-    <div style={{ textAlign: "center"}}>
+    <div  className='col-md-7 col-lg-8'>
+      <div >
         <img
           className="img-cane"
           style={{width:"250px", height:"auto"}}
@@ -19,7 +19,9 @@ function DogFood() {
         Scegli i filtri desiderati e conferma
       </h3>
       <CheckFoodDog />
-  </Container>
+    </div>
+    
+    
     
   )
 }
