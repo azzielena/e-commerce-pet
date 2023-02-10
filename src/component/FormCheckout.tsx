@@ -4,6 +4,7 @@ import { CartContext } from "../context/CartContext";
 import postData from "../helpers/postData";
 import useForm from "../hooks/useForm";
 import { Customer, Order } from "../types/typeApp";
+import { Button, Modal } from "react-bootstrap";
 
 const initialState = {
     name: '',
@@ -15,6 +16,10 @@ const initialState = {
 /*const notify = (msj: string) => toast(msj);*/
 
 const FormCheckout = () => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     
     const {cartItems, dispatch } = useContext(CartContext);
     const {name, email, lastName, address, handleInputChange, resetValues } = useForm<Customer>(initialState);
@@ -82,7 +87,27 @@ const FormCheckout = () => {
                     </div>
                 </div>
                 <br />
-                <button className='btnAddCart' type='submit'>Effettua l'ordine</button>
+                
+                <>
+      <button onClick={handleShow} className='btnAddCart'>
+      Effettua l'ordine
+      </button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Confermi il modulo e procedi al pagamento?</Modal.Body>
+        <Modal.Footer>
+          <button className="btn-secondary" onClick={handleClose} style={{width:"90px"}}>
+            Annulla
+          </button>
+          <button className="btn-secondary" onClick={handleClose} style={{width:"90px"}}>
+            Confermo
+          </button>
+        </Modal.Footer>
+      </Modal>
+    </>
                 
             </form>
         </div>
