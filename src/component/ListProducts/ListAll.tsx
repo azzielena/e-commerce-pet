@@ -6,7 +6,12 @@ import { AllItem } from '../../types/typeApp';
 import All from './All';
 
 
-const ListAll =(val:any)=>{
+type Props = {
+  val: any;
+  search: any;}
+
+
+const ListAll =({val, search}: Props)=>{
     const {dispatch} = useContext (CartContext);
     const { products, isLoading } = useAllFetch(val);
     
@@ -22,7 +27,12 @@ const ListAll =(val:any)=>{
   return (  
     <>
     {
-        products.map(product => (
+        products.filter((item) => {
+          console.log("search:"+JSON.stringify(search));
+          return (JSON.stringify(search).toLowerCase() === '{}')
+            ? item
+            : item.Nome.toLowerCase().includes(search);
+        }).map(product => (
           <All 
           key={product.Id} 
           product={product}

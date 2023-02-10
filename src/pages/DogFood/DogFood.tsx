@@ -12,24 +12,10 @@ function DogFood(val:any) {
     <div>
       <MenuOffCanvasDog />
       <Container className="mt-3 viewProduct">
-            <ListProducts v={val}/>
+            <ListProducts {...val}/>
       </Container>
     </div>
 
-
-    /*
-    <div>
-      
-      <Container>
-        <Row>
-          <FiltersDog />
-          <Container className="mt-3 col-md-5 col-lg-4 viewProduct">
-            <ListProducts v={val}/>
-          </Container>
-        </Row>
-      </Container>
-
-    </div>*/
   )
 }
 

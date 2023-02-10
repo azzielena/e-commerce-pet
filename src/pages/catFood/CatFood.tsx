@@ -9,7 +9,7 @@ function CatFood(val:any) {
   return (  
     <div>
     <MenuOffCanvasCat /> 
-    <Container className="mt-3 viewProduct" > <ListProducts v={val} />
+    <Container className="mt-3 viewProduct" > <ListProducts {...val} />
     </Container>
     </div>
   )

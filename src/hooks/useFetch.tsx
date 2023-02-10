@@ -11,7 +11,7 @@ const useFetch=(val: any)=>{
     console.log(JSON.stringify(val));
     useEffect(()=>{
 
-        if(JSON.stringify(val)==='{"v":{"val":"cibocane"}}'){
+        if(JSON.stringify(val)==='"cibocane"'){
             fetch("/getDogFood")
             .then((res) => res.json())
             .then((data) => setData({
@@ -19,7 +19,7 @@ const useFetch=(val: any)=>{
             isLoading:false,
             isError:false}));}
 
-        else if(JSON.stringify(val)==='{"v":{"val":"seccocane"}}'){
+        else if(JSON.stringify(val)==='"seccocane"'){
             fetch("/getDogFoodSecco")
             .then((res) => res.json())
             .then((data) => setData({
@@ -28,7 +28,7 @@ const useFetch=(val: any)=>{
             isError:false}));
         }
 
-        else if(JSON.stringify(val)==='{"v":{"val":"umidocane"}}'){
+        else if(JSON.stringify(val)==='"umidocane"'){
             fetch("/getDogFoodUmido")
             .then((res) => res.json())
             .then((data) => setData({
@@ -37,7 +37,7 @@ const useFetch=(val: any)=>{
             isError:false}));
         }
 
-        else if(JSON.stringify(val)==='{"v":{"val":"cibogatto"}}'){
+        else if(JSON.stringify(val)==='"cibogatto"'){
             fetch("/getCatFood")
             .then((res) => res.json())
             .then((data) => setData({
@@ -45,7 +45,7 @@ const useFetch=(val: any)=>{
             isLoading:false,
             isError:false}));}
 
-        else if(JSON.stringify(val)==='{"v":{"val":"seccogatto"}}'){
+        else if(JSON.stringify(val)==='"seccogatto"'){
             fetch("/getCatFoodSecco")
             .then((res) => res.json())
             .then((data) => setData({
@@ -53,7 +53,7 @@ const useFetch=(val: any)=>{
             isLoading:false,
             isError:false}));}
 
-        else if(JSON.stringify(val)==='{"v":{"val":"umidogatto"}}'){
+        else if(JSON.stringify(val)==='"umidogatto"'){
             fetch("/getCatFoodUmido")
             .then((res) => res.json())
             .then((data) => setData({
@@ -61,42 +61,10 @@ const useFetch=(val: any)=>{
             isLoading:false,
             isError:false}));}
 
-        else if(JSON.stringify(val)==='{"val":"all"}'){
-            fetch("/getAll")
-            .then((res) => res.json())
-            .then((data) => setData({
-            products:data,
-            isLoading:false,
-            isError:false}));}
-    
-
-  }, []);
+  }, [val]);
     
     return data;
-       /* getProducts()
-        .then((data)=>{
-           
-            const customData= data.map((product: ProductItem) => ({...product, description: product.description.substring(0,55)}) )
-            console.log("c:"+customData);
-            
-            setData({
-                products:data,
-                isLoading:false,
-                isError:false
-            })
-        })
-        .catch (err =>{
-            console.log("error");
-            setData({
-                
-                products:[],
-                isLoading:false,
-                isError:true
-            })
-        })
-    },[]);
-    
-    return data;*/
+       
 }
 
 

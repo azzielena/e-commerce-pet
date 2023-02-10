@@ -16,7 +16,7 @@ function CatAccessories(val:any) {
           style={{width: "400px", height: "400px"}}/>
         </div>
       <Container className="mt-3 viewProduct" > 
-        <ListAccessories v={val} />
+        <ListAccessories {...val} />
       </Container>
     </div>
     

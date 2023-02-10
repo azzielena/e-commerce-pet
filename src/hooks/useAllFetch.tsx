@@ -8,10 +8,10 @@ const useFetch=(val: any)=>{
         isLoading: true,
         isError: false
     });
-    console.log(JSON.stringify(val));
+    console.log("j:"+JSON.stringify(val));
     useEffect(()=>{
 
-        if(JSON.stringify(val)==='{"val":"all"}'){
+     if(JSON.stringify(val)==='"all"'){
             fetch("/getAll")
             .then((res) => res.json())
             .then((data) => setData({

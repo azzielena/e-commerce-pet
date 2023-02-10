@@ -5,8 +5,11 @@ import useFetch from '../../hooks/useFetch';
 import { ProductItem } from '../../types/typeApp';
 import Products from './Products';
 
+type Props = {
+  val: any;}
 
-const ListProducts =(val:any)=>{
+
+const ListProducts =({val}:Props)=>{
     const {dispatch} = useContext (CartContext);
     const { products, isLoading } = useFetch(val);
     

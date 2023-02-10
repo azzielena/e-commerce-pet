@@ -6,7 +6,11 @@ import { AccessoriesItem } from '../../types/typeApp';
 import Accessories from './Accessories';
 
 
-const ListAccessories =(val:any)=>{
+type Props = {
+  val: any;}
+
+
+const ListAccessories =({val}:Props)=>{
     const {dispatch} = useContext (CartContext);
     const { products, isLoading } = useAFetch(val);
     
@@ -18,6 +22,9 @@ const ListAccessories =(val:any)=>{
     }
   
     if(isLoading){return <h1>Caricando...</h1>}
+    console.log("bbb:"+products[0].Nome);
+
+  
 
   return (  
     <>
