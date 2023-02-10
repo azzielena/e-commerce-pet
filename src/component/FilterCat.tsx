@@ -1,22 +1,22 @@
 import { Button, Form } from "react-bootstrap";
 import { CartContext } from "../context/CartContext";
 import { createContext, useContext } from "react";
-
+/*
 
 const Cart = createContext();
 faker.seed(99);
 export const CartState = () => {
     return useContext(Cart);
-  };
+  };*/
 
-const FilterCat = () => {
+const FilterCat = () => {/*
   const {
     productDispatch,
     productState: { byPuppy, byAdult},
   } = CartState();
 
   // make state for rating
-
+*/
   return (
     <div className="filters">
       <span className="title">Filter Products</span>
@@ -28,12 +28,12 @@ const FilterCat = () => {
           name="group1"
           type="checkbox"
           id={`inline-3`}
-          onChange={() =>
-            productDispatch({
-              type: "FILTER_BY_AGE",
-            })
-          }
-          checked={byAdult}
+          //onChange={() =>
+            //productDispatch({
+             // type: "FILTER_BY_AGE",
+           // })
+          //}
+         // checked={byAdult}
         />
       </span>
       <span>
@@ -43,12 +43,12 @@ const FilterCat = () => {
           name="group1"
           type="checkbox"
           id={`inline-4`}
-          onChange={() =>
+         /* onChange={() =>
             productDispatch({
               type: "FILTER_BY_AGE",
             })
           }
-          checked={byPuppy}
+          checked={byPuppy}*/
         />
       </span>
       <span>
@@ -57,16 +57,16 @@ const FilterCat = () => {
       </span>
       <Button
         variant="light"
-        onClick={() =>
+        /*onClick={() =>
           productDispatch({
             type: "CLEAR_FILTERS",
           })
-        }
+        }*/
       >
         Clear Filters
       </Button>
     </div>
-  );
-};
+  )};
+
 
 export default FilterCat;
