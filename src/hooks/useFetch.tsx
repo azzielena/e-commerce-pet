@@ -8,7 +8,7 @@ const useFetch=(val: any)=>{
         isLoading: true,
         isError: false
     });
-
+    console.log(JSON.stringify(val));
     useEffect(()=>{
 
         if(JSON.stringify(val)==='{"v":{"val":"cibocane"}}'){
@@ -60,6 +60,15 @@ const useFetch=(val: any)=>{
             products:data,
             isLoading:false,
             isError:false}));}
+
+        else if(JSON.stringify(val)==='{"val":"all"}'){
+            fetch("/getAll")
+            .then((res) => res.json())
+            .then((data) => setData({
+            products:data,
+            isLoading:false,
+            isError:false}));}
+    
 
   }, []);
     

@@ -10,6 +10,12 @@ export type AccessoriesFetch={
     isError: boolean;
 }
 
+export type AllFetch={
+    products:AllItem[],
+    isLoading: boolean;
+    isError: boolean;
+}
+
 
 export type ProductItem ={ //food
     Id:number;
@@ -26,6 +32,15 @@ export type ProductItem ={ //food
     Img: string;
 }
 
+export type AllItem ={ //all
+    Id:number;
+    Nome: string;
+    Marca:string;
+    Prezzo:number;
+    Descrizione: string;
+    Img: string;
+}
+ 
 export type AccessoriesItem ={ //accessori
     Id:number;
     Nome: string;
