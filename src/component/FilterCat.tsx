@@ -2,7 +2,7 @@ import { Button, Form } from "react-bootstrap";
 import { CartContext } from "../context/CartContext";
 import { createContext, useContext } from "react";
 
-
+/*
 const Cart = createContext();
 faker.seed(99);
 export const CartState = () => {
@@ -70,3 +70,4 @@ const FilterCat = () => {
 };
 
 export default FilterCat;
+*/
