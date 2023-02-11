@@ -87,3 +87,12 @@ export type Order = {
     customer: Customer,
     order_details: CartItem[]
 }
+
+export type FilterCatConxt={
+    productState:{ byPuppy:boolean, byAdult:boolean};
+    productDispatch: React.Dispatch<catActionReducer>;
+}
+
+ export type catActionReducer ={
+    type : 'FILTER_BY_PUPPY' | 'FILTER_BY_ADULT' | 'CLEAR_FILTERS';
+}

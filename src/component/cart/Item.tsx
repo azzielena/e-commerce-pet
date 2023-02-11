@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap';
 import { FaMinus, FaPlus, FaTrashAlt } from 'react-icons/fa';
 import '../../App.css'
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../context/Context';
 import { CartItem } from '../../types/typeApp';
 
 type Props = {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../context/Context';
 import useAFetch from '../../hooks/useAFetch';
 import { AccessoriesItem } from '../../types/typeApp';
 import Accessories from './Accessories';
