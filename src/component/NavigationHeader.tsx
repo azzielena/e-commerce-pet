@@ -10,6 +10,7 @@ import DogAccessories from '../pages/dogAccessories/DogAccessories';
 import CatAccessories from '../pages/catAccessories/CatAccessories';
 import CardPayment from '../pages/payment/CardPayment';
 import ContactUs from '../pages/contact/ContactUs';
+import Newsletter from '../pages/Newsletter/Newsletter';
 
 type Props = {
   handleOpen : (state:boolean) => void
@@ -39,7 +40,8 @@ const NavigationHeader =({ handleOpen }: Props)=>{
         <Route  path='/dogaccessories/collare' element={<DogAccessories val={"collare"} />}/>
         <Route  path='/dogaccessories/ciotola' element={<DogAccessories val={"ciotolacane"} />}/>
 
-        <Route  path='/contactUs' element={<ContactUs />}/>
+        
+        <Route  path='/newsletter' element={<Newsletter />}/>
         <Route  path='/payment' element={<CardPayment />}/>
         </Routes>
     </>

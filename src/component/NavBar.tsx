@@ -8,7 +8,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { getTotalItems } from '../helpers/calculate';
-import { CartContext } from '../context/CartContext';
+import { CartContext } from '../context/Context';
 
 type Props = {
   handleOpen : (state:boolean) => void;
@@ -87,7 +87,7 @@ const NavBar =({ handleOpen }: Props)=>{
             </NavDropdown>
           </Nav>
           <Nav>
-          <Link to="/contactUs" style={{textDecoration:"none"}}><Nav.Link href="action/4" >Invia un messaggio</Nav.Link></Link>
+          <Link to="/newsletter" style={{textDecoration:"none"}}><Nav.Link href="action/4" >Iscriviti alla Newsletter</Nav.Link></Link>
           <Nav.Link href='javascript:window.scrollTo(0,999999);'>Contatti</Nav.Link>
           </Nav>
         

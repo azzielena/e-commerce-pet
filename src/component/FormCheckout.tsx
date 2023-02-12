@@ -1,6 +1,6 @@
 import { FormEvent, useContext, useState } from "react";
 /*import toast, { Toaster } from "react-hot-toast";*/
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../context/Context";
 import postData from "../helpers/postData";
 import useForm from "../hooks/useForm";
 import { Customer, Order } from "../types/typeApp";

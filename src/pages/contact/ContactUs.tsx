@@ -13,7 +13,6 @@ function ContactUs() {
   <button className="buttonContact">Send Message</button>
   
 </form>
-      
 
   )
 }

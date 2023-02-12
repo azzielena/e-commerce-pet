@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../context/Context';
 import useAllFetch from '../../hooks/useAllFetch';
 import { AllItem } from '../../types/typeApp';
 import All from './All';
@@ -28,7 +28,6 @@ const ListAll =({val, search}: Props)=>{
     <>
     {
         products.filter((item) => {
-          console.log("search:"+JSON.stringify(search));
           return (JSON.stringify(search).toLowerCase() === '{}')
             ? item
             : item.Nome.toLowerCase().includes(search);

@@ -5,7 +5,7 @@ import Footer from './component/Footer';
 import NavigationHeader from './component/NavigationHeader';
 import { BrowserRouter as Router } from 'react-router-dom';
 import SidebarCart from './component/SidebarCart';
-import { CartProvider } from './context/CartContext';
+import {  Context } from './context/Context';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -16,12 +16,13 @@ function App() {
   return (  
     <div>
       <Router> 
-        <CartProvider>
+        <Context>
         <NavigationHeader handleOpen={ setShow }/>
         {show && <SidebarCart handleClose={ setShow } /> }
-        </CartProvider>
-        </Router>
+        </Context>
         <Footer />
+        </Router>
+        
     </div>
   );
 }

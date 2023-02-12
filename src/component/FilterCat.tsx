@@ -1,5 +1,5 @@
 import { Button, Form } from "react-bootstrap";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../context/Context";
 import { createContext, useContext } from "react";
 /*
 
