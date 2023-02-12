@@ -89,10 +89,19 @@ export type Order = {
 }
 
 export type FilterCatConxt={
-    productState:{ byPuppy:boolean, byAdult:boolean};
-    productDispatch: React.Dispatch<catActionReducer>;
+    productStateCat:{ byPuppyCat:boolean, byAdultCat:boolean};
+    productDispatchCat: React.Dispatch<catActionReducer>;
 }
 
  export type catActionReducer ={
     type : 'FILTER_BY_PUPPY' | 'FILTER_BY_ADULT' | 'CLEAR_FILTERS';
+}
+
+export type FilterDogConxt={
+    productStateDog:{ byPuppyDog:boolean, byAdultDog:boolean, small:boolean, medium: boolean, big: boolean};
+    productDispatchDog: React.Dispatch<dogActionReducer>;
+}
+
+ export type dogActionReducer ={
+    type : 'FILTER_BY_PUPPY' | 'FILTER_BY_ADULT' | 'FILTER_BY_SMALL' | 'FILTER_BY_MEDIUM' |'FILTER_BY_BIG' |'CLEAR_FILTERS';
 }

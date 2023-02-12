@@ -1,34 +1,58 @@
 import { createContext, useReducer } from "react";
 import cartReducer from "../reducer/cartReducer";
 import { CatFilterReducer } from "../reducer/CatFilterReducer";
-import { CartContextType, FilterCatConxt } from "../types/typeApp";
+import { DogFilterReducer } from "../reducer/DogFilterReducer";
+import { CartContextType, FilterCatConxt, FilterDogConxt } from "../types/typeApp";
 
 const initialState = {
     cartItems: [],
     dispatch: () => {}
 }
-const initialStateFilter = {
-    productState:{ byPuppy:false, byAdult:false},
-    productDispatch: () => {}
+const initialStateFilterCat = {
+    productStateCat:{ byPuppyCat:false, byAdultCat:false},
+    productDispatchCat: () => {}
+}
+
+const initialStateFilterDog = {
+    productStateDog:{ byPuppyDog:false, byAdultDog:false, small: false, medium: false, big:false},
+    productDispatchDog: () => {}
 }
 
  
 
-export const CatFilter = createContext<FilterCatConxt>(initialStateFilter);
+export const CatFilter = createContext<FilterCatConxt>(initialStateFilterCat);
+export const DogFilter = createContext<FilterDogConxt>(initialStateFilterDog);
 
 export const CartContext = createContext<CartContextType>(initialState);
 
 export const Context = ({ children }: any) => {
 
     const [cartItems, dispatch] = useReducer(cartReducer, initialState.cartItems);
-    const [productState, productDispatch] = useReducer(CatFilterReducer, initialStateFilter.productState);
+    const [productStateCat, productDispatchCat] = useReducer(CatFilterReducer, initialStateFilterCat.productStateCat);
+    const [productStateDog, productDispatchDog] = useReducer(DogFilterReducer, initialStateFilterDog.productStateDog);
 
   
     return (
-        <CartContext.Provider value={{cartItems,dispatch }}>
-            <CatFilter.Provider value={{  productState, productDispatch}}>
+        <>
+        <CartContext.Provider value={{cartItems,dispatch}}>
+            
+            
+            <CatFilter.Provider value={{ productStateCat, productDispatchCat}}>
+            <DogFilter.Provider value={{  productStateDog, productDispatchDog}}>
                  {children}
+                 
+        </DogFilter.Provider>
             </CatFilter.Provider>
-        </CartContext.Provider>
+            
+   
+ 
+    </CartContext.Provider> 
+</>
+        
+        
+            
+        
+     
+        
     )
 }

@@ -4,8 +4,8 @@ import ListProducts from '../../component/ListProducts/ListProduct';
 import CheckFoodDog from '../../component/CheckFoodDog';
 import MenuOffCanvasDog from '../../component/MenuOffCanvasDog';
 import '../../App.css'
-import FiltersDog from '../../component/FiltersDog';
-import Footer from '../../component/Footer';
+
+
 
 function DogFood(val:any) {
   return (  

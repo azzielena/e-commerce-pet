@@ -7,11 +7,10 @@ import { CatFilter } from '../context/Context';
 function CheckFoodCat() {
 
   const {
-    productDispatch,
-    productState: { byPuppy, byAdult },
+    productDispatchCat,
+    productStateCat: { byPuppyCat, byAdultCat },
   } = useContext(CatFilter);
 
-  console.log( byPuppy, byAdult);
   return (
     <div>
     &emsp;
@@ -21,11 +20,11 @@ function CheckFoodCat() {
         id="cucciolo"
         label="Cucciolo"
         onChange={()=>{
-          productDispatch({
+          productDispatchCat({
             type:"FILTER_BY_PUPPY",
           })
         }}
-        checked={byPuppy}
+        checked={byPuppyCat}
       />
      &nbsp;
       <Form.Check 
@@ -34,18 +33,18 @@ function CheckFoodCat() {
         id="adulto"
         label="Adulto"
         onChange={()=>{
-          productDispatch({
+          productDispatchCat({
             type:"FILTER_BY_ADULT",
           })
         }}
-        checked={byAdult}
+        checked={byAdultCat}
       />
       &nbsp;
     &emsp;  
     <button
         className="btnFilter"
         onClick={() =>
-          productDispatch({
+          productDispatchCat({
             type: "CLEAR_FILTERS",
           })
         }
