@@ -87,7 +87,8 @@ const NavBar =({ handleOpen }: Props)=>{
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href='javascript:window.scrollTo(0,999999);'>Contatti</Nav.Link>
+          <Link to="/contactUs" style={{textDecoration:"none"}}><Nav.Link href="action/4" >Invia un messaggio</Nav.Link></Link>
+          <Nav.Link href='javascript:window.scrollTo(0,999999);'>Contatti</Nav.Link>
           </Nav>
         
           <FaShoppingCart className="login_menu" onClick={() => handleOpen(true)}  /> 

@@ -5,6 +5,7 @@ import postData from "../helpers/postData";
 import useForm from "../hooks/useForm";
 import { Customer, Order } from "../types/typeApp";
 import { Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const initialState = {
     name: '',
@@ -23,44 +24,12 @@ const FormCheckout = () => {
     
     const {cartItems, dispatch } = useContext(CartContext);
     const {name, email, lastName, address, handleInputChange, resetValues } = useForm<Customer>(initialState);
-    /*const [showToast, setShowToast ] = useState(false);*/
+
     
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         console.log("inviato al server");
-       /* setShowToast(true);
 
-        const orderDetails = cartItems.map(({id, image, ...item}) => item);
-
-        if(orderDetails.length > 0){
-            
-            const order: Order = {
-                customer: {
-                    name, email, lastName, address
-                },
-                order_details: orderDetails
-            }
-            
-            const fetchApi = await postData(order);
-            
-            if(!fetchApi.ok){
-                notify('No se pudo procesar la orden...Intentelo nuevamente');
-            }else{
-                notify('Orden realizada exitosamente');
-
-                resetValues();
-
-                dispatch({
-                    payload: [],
-                    type: 'CLEAR'
-                });
-                
-            }
-        }else {
-            notify('No se puede procesar una orden sin productos');
-        }
-        
-        setTimeout(() => setShowToast(false),5000);*/
     }
     
     
@@ -102,9 +71,9 @@ const FormCheckout = () => {
           <button className="btn-secondary" onClick={handleClose} style={{width:"90px"}}>
             Annulla
           </button>
-          <button className="btn-secondary" onClick={handleClose} style={{width:"90px"}}>
+          <Link to="/payment"> <button className="btn-secondary" style={{width:"90px"}}>
             Confermo
-          </button>
+          </button></Link>
         </Modal.Footer>
       </Modal>
     </>
@@ -113,14 +82,6 @@ const FormCheckout = () => {
         </div>
     )
 }
-/* dopo button a rig a 86 inserire:
-{
-                    showToast && <Toaster 
-                        toastOptions={{
-                            position: 'top-right',
-                            duration: 2000,
-                        }}/>
-                }
-*/ 
+
 
 export default FormCheckout;
