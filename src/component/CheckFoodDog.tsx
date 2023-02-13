@@ -78,6 +78,7 @@ function CheckFoodDog() {
       />
       &nbsp;
     &emsp;  
+  
     <button
         className="btnFilter"
         onClick={() =>
@@ -86,7 +87,7 @@ function CheckFoodDog() {
           })
         }
       >
-        Clear
+        Resetta i filtri
       </button>
     
     </div>

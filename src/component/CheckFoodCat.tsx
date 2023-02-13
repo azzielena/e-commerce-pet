@@ -49,7 +49,7 @@ function CheckFoodCat() {
           })
         }
       >
-        Clear
+        Resetta i filtri
       </button>
     
     </div>
