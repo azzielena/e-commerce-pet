@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import { Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip'
+import Overlay from 'react-bootstrap/Overlay';
 
 
 function CardPayment() {
@@ -9,8 +14,19 @@ function CardPayment() {
   const [expiry, setExpiry]=useState('');
   const [cvc, setCvc]=useState('');
   const [focus, setFocus]=useState('');
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  /*const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Ordine Effettuato
+    </Tooltip> );*/
+    const target = useRef(null);
+    
  
   return (
+    <div>
     <div className="AppPayment">
       <h1 className="titlePayment" >Inserisci i tuoi dati per effettuare l'acquisto</h1> <br/>
       <Cards 
@@ -76,17 +92,31 @@ function CardPayment() {
       </div>
       </div>
             <div className="form-actions">
+            <>
               <button className="btn btn-block " 
+              ref={target} onClick={() => setShow(!show)}
               style={{backgroundColor:"#39c010",
               borderRadius: "10%",
               fontFamily: "'Trebuchet MS', sans-serif",
               color: "#f7fbf6",
               borderColor: "#a0a003"
               }}>PAY</button>
+              
+              <Overlay target={target.current} show={show} placement="right">
+        {(props) => (
+          <Tooltip id="overlay-example" {...props}>
+            Ordine effettuato correttamente :)
+          </Tooltip>
+        )}
+      </Overlay></>
+          
             </div>
       </form>
+     
     </div>
     
+      
+     </div>
   )
 }
   

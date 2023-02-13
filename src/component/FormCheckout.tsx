@@ -6,6 +6,7 @@ import { Customer, Order } from "../types/typeApp";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import 'react-credit-cards/es/styles-compiled.css';
+import toast, { Toaster } from "react-hot-toast";
 
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
     email: '',
     address: ''
 }
+const notify = (msj: string) => toast(msj);
 
 
 const FormCheckout = () => {
@@ -24,37 +26,47 @@ const FormCheckout = () => {
     
     const {cartItems, dispatch } = useContext(CartContext);
     const {name, email, lastName, address, handleInputChange, resetValues } = useForm<Customer>(initialState);
-
+    const [showToast, setShowToast ] = useState(false);
     
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         console.log("inviato al server");
+        setShowToast(true);
 
-        const orderDetails = cartItems.map(({Id, Nome, ...item}) => item);
+        const orderDetails = cartItems.map(({...item}) => item);
 
         if(orderDetails.length > 0){
-            
+            //console.log(orderDetails.map((item)=>console.log(item.Nome)));
             const order: Order = {
                 customer: {
                     name, email, lastName, address
                 },
                 order_details: orderDetails
             }
-            
+            //console.log("consumer: "+order.customer.name)
+            //console.log("valori: "+(order.order_details).map((item)=>console.log(item.Nome)))
+
             const fetchApi = await postData(order);
             
             if(!fetchApi.ok){
                 notify('No se pudo procesar la orden...Intentelo nuevamente');
             }else{
                 notify('Orden realizada exitosamente');
+                resetValues();
 
-        resetValues();
-        dispatch ({
-          payload:[],
-          type:'CLEAR'
-        });
+                dispatch ({
+                payload:[],
+                type:'CLEAR'
+                });
 
-    }
+            }
+        }else {
+                notify('No se puede procesar una orden sin productos');
+            }
+            
+            setTimeout(() => setShowToast(false),5000);
+        }
+        
     
     return (
         <div className='col-md-7 col-lg-8'>
@@ -107,5 +119,5 @@ const FormCheckout = () => {
     )
 }
 
-
 export default FormCheckout;
+
