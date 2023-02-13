@@ -6,6 +6,9 @@ import useForm from "../hooks/useForm";
 import { Customer, Order } from "../types/typeApp";
 import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Cards from 'react-credit-cards';
+import 'react-credit-cards/es/styles-compiled.css';
+
 
 const initialState = {
     name: '',
@@ -54,6 +57,7 @@ const FormCheckout = () => {
                         <label htmlFor="address" className='form-label'>Indirizzo</label>
                         <input type="text" className='form-control' name='address' id='address' placeholder='Indirizzo..' value={address} onChange={handleInputChange}/>
                     </div>
+                    
                 </div>
                 <br />
                 

@@ -4,6 +4,7 @@ import Footer from '../../component/Footer';
 import FormCheckout from '../../component/FormCheckout';
 import OrderSummary from '../../component/OrderSummary';
 
+
 function Checkout() {
   return (  
     <div>
