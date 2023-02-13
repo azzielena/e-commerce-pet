@@ -12,19 +12,18 @@ function CardPayment() {
  
   return (
     <div className="AppPayment">
-      <h1 style={{fontWeight: "bold", margin: "0 0 10px"}}
-      >Pagina Pagamento</h1>
+      <h1 className="titlePayment" >Inserisci i tuoi dati per effettuare l'acquisto</h1> <br/>
       <Cards 
         number={number}
         name={name}
         expiry={expiry}
         cvc={cvc}
         focused={focus}
-        
+        style={{textAlign:"center"}}
       />
 
       <form className="formCards">
-        <div className="form-group">
+        <div >
           <input 
             className="inputCards"
             type='tel' 
@@ -34,8 +33,10 @@ function CardPayment() {
             onChange={e=> setNumber(e.target.value)}
             onFocus={e => setFocus(e.target.name)}
           />
-        <small>E.g.: 49..., 51..., 36..., 37...</small>
-        </div>
+          <br />
+        <small style={{fontSize:"11px"}} >Esempio.: 49..., 51..., 36..., 37...</small>
+        <br/> </div>
+       
         
         <div className="form-group">
         <input 
@@ -48,10 +49,11 @@ function CardPayment() {
         onFocus={e => setFocus(e.target.name)}
         />
         </div>
+        <br/>
         <div className="row">
           <div className="col-6">
         <input 
-        className="inputCards"
+        className="inputCards2"
         type='text' 
         name='expiry' 
         placeholder='MM/YY expiry' 
@@ -59,9 +61,10 @@ function CardPayment() {
         onChange={e=> setExpiry(e.target.value)}
         onFocus={e => setFocus(e.target.name)}
         />
-        </div><div className="col-6">    
+        </div>
+        <div className="col-6">    
         <input 
-        className="inputCards"
+        className="inputCards2"
         type='tel' 
         name='cvc' 
         placeholder='CVC' 
@@ -73,7 +76,13 @@ function CardPayment() {
       </div>
       </div>
             <div className="form-actions">
-              <button className="btn btn-primary btn-block">PAY</button>
+              <button className="btn btn-block " 
+              style={{backgroundColor:"#39c010",
+              borderRadius: "10%",
+              fontFamily: "'Trebuchet MS', sans-serif",
+              color: "#f7fbf6",
+              borderColor: "#a0a003"
+              }}>PAY</button>
             </div>
       </form>
     </div>

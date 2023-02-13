@@ -1,12 +1,10 @@
 import { FormEvent, useContext, useState } from "react";
-/*import toast, { Toaster } from "react-hot-toast";*/
 import { CartContext } from "../context/Context";
 import postData from "../helpers/postData";
 import useForm from "../hooks/useForm";
 import { Customer, Order } from "../types/typeApp";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 
 

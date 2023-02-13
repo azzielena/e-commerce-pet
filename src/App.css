@@ -247,140 +247,168 @@
     width: calc(100% - 40px);
     height: auto;
     max-width: 900px;
+}}
+  
+.contentNewsletter {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  min-height: 100vh;
+  
+  @media (min-width: 768px) {
+    min-height: inherit;
   }}
   
-  .contentNewsletter {
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-    min-height: 100vh;
+  .containerNewsletter {
+    padding: 100px 20px 140px;
+    
+    @media (min-width: 568px) {
+      padding: 50px 20px 80px;
+    }
     
     @media (min-width: 768px) {
-      min-height: inherit;
+      padding: 70px 0px 90px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+  }
+  
+
+  
+  
+  .titleNewsletter {
+      text-align: center;
+      color: #39c010;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 50px; 
+      letter-spacing: 0.05rem;
+    
+  }
+  
+  .imgNewsletter {
+    width: 100%;
+    max-width: 220px;
+    display: inline-block;
+    margin: 30px 0 40px 0;
+    
+    @media (min-width: 768px) {
+      max-width: 300px;
+    }
+  }
+  
+
+.subscribe h1 {
+  font-size: 1.5rem;
+  color: gray;
+  line-height: 130%;
+  letter-spacing: 0.07rem;
+  margin-bottom: 30px;}
+  
+  .subscribe span {
+    color: #39c010;
+  }
+
+.formNewsletter {
+  overflow: hidden;}
+      
+.formEmail {
+    width: 100%;
+    float: left;
+    padding: 15px 20px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    outline: 0;
+    margin-bottom: 15px;
+    border: 1px solid lighten(gray, 50%);
+    @media (min-width: 768px) {
+      margin-bottom: 0px;
+      width: 75%;
+      border-right-width: 0px;
     }}
-    
-    .containerNewsletter {
-      padding: 100px 20px 140px;
-      
-      @media (min-width: 568px) {
-        padding: 50px 20px 80px;
-      }
-      
-      @media (min-width: 768px) {
-        padding: 70px 0px 90px;
-        max-width: 520px;
-        margin: 0 auto;
-      }
-    }
-    
-
-    
-   
-    .titleNewsletter {
-        text-align: center;
-        color: #39c010;
-        text-transform: uppercase;
-        font-weight: 900;
-        font-size: 50px; 
-        letter-spacing: 0.05rem;
-      
-    }
-    
-    .imgNewsletter {
-      width: 100%;
-      max-width: 220px;
-      display: inline-block;
-      margin: 30px 0 40px 0;
-      
-      @media (min-width: 768px) {
-        max-width: 300px;
-      }
-    }
-    
   
-      .subscribe h1 {
-        font-size: 1.5rem;
-        color: gray;
-        line-height: 130%;
-        letter-spacing: 0.07rem;
-        margin-bottom: 30px;}
-        
-        .subscribe span {
-          color: #39c010;
-        }
-      
-      .formNewsletter {
-        overflow: hidden;}
-        
-       .formEmail {
-          width: 100%;
-          float: left;
-          padding: 15px 20px;
-          text-align: center;
-          font-family: inherit;
-          font-size: 1.1rem;
-          letter-spacing: 0.05rem;
-          outline: 0;
-          margin-bottom: 15px;
-          border: 1px solid lighten(gray, 50%);
-           @media (min-width: 768px) {
-              margin-bottom: 0px;
-              width: 75%;
-              border-right-width: 0px;
-            }}
-            
-            .formEmail:focus {
-              border-color: gray;
-            }
-          
-          
-          .formSubmit{
-            width: 100%;
-          float: left;
-          padding: 15px 20px;
-          text-align: center;
-          font-family: inherit;
-          font-size: 1.1rem;
-          letter-spacing: 0.05rem;
-          outline: 0;
-            background-color: #39c010;
-            color: rgb(248, 241, 241);
-            border: 1px solid rgb(19, 72, 4);
-           
-            
-            @media (min-width: 768px) {
-              width: 25%;
-            }}
-            
-            .formSubmit:hover {
-              cursor: pointer;
-              background-color: darken(purple, 10%);
-              border-color: darken(purple, 10%);
-            }
+  .formEmail:focus {
+    border-color: gray;
+  }
+  
+  
+  .formSubmit{
+    width: 100%;
+    float: left;
+    padding: 15px 20px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    outline: 0;
+    background-color: #39c010;
+    color: rgb(248, 241, 241);
+    border: 1px solid rgb(19, 72, 4);
+    
+    
+    @media (min-width: 768px) {
+      width: 25%;
+    }}
+  
+  .formSubmit:hover {
+    cursor: pointer;
+    background-color: darken(purple, 10%);
+    border-color: darken(purple, 10%);
+  }
+
 /*css del pagamento*/
-            .inputCards{
-              padding: .375rem .75rem;
-              align-items: center;
-              font-size: 1rem;
-              line-height: 1.5;
-              color: #495057;
-              background-color: #fff;
-              background-clip: padding-box;
-              border: 1px solid #ced4da;
-              border-radius: .25rem;
-              transition: border-color .15s;
-            }
-          
-            .formCards{
-              margin: 30px auto 0;
-              width: 400px;
+.titlePayment {
+  text-align: center;
+  color: #39c010;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 25px; 
+  letter-spacing: 0.05rem;
+  margin-top: 20px;
 
-            }
-            .AppPayment{
-              padding: 30px;
-            }
-            .form-actions {
-              margin-top: 15px;
-            }
-  
- 
+}
+
+.inputCards{
+  padding: .375rem .75rem;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s;
+  width: 400px;
+}
+
+.inputCards2{
+  padding: .375rem .75rem;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s;
+  width: 188px;
+}
+
+.formCards{
+  margin: 30px auto 0;
+  width: 400px;
+
+}
+.AppPayment{
+  padding: 30px;
+}
+.form-actions {
+  margin-top: 25px;
+  text-align: center;
+}
+
+

@@ -33,10 +33,10 @@ const ListProducts =({val}:Props)=>{
     if(isLoading){return <h1>Caricando...</h1>}
 
     const trasformProducts=() =>{
-          let p = products;
-          products.map((i)=> console.log(i.Specie));
+      let p = products;
+      products.map((i)=> console.log(i.Specie));
 
-          if(products[0].Specie===2){
+      if(products[0].Specie===2){
           if ((!byPuppyCat)&&(byAdultCat)) {
             p = p.filter((prod) => prod.Age===2);
           }
@@ -46,56 +46,97 @@ const ListProducts =({val}:Props)=>{
           }
 
           else {
+            products.map((i)=> console.log(i.Nome));
             p = products;
           }
-        }
-        else if(products[0].Specie===1){
-          if ((!byPuppyDog)&&(byAdultDog)&&(!small)&&(!medium)&&(!big)) {
-            p = p.filter((prod) => prod.Age===2);
-          }
-      
-          else if ((byPuppyDog)&&(!byAdultDog)&&(!small)&&(!medium)&&(!big)) {
-            p = p.filter((prod) => prod.Age===1);
-          }
-          else if ((byPuppyDog)&&(small)&&(!medium)&&(!big)) {
-            p = p.filter((prod) => ((prod.Age===1) && ((prod.Taglia===1)||(prod.Taglia===null))));
-          }
-          else if ((byPuppyDog)&&(!small)&&(medium)&&(!big)) {
-            p = p.filter((prod) => ((prod.Age===1) && ((prod.Taglia===2)||(prod.Taglia===null))));
-          }
-          else if ((byPuppyDog)&&(!small)&&(!medium)&&(big)) {
-            p = p.filter((prod) => ((prod.Age===1) && ((prod.Taglia===3)||(prod.Taglia===null))));
-          }
-          else if ((!byPuppyDog)&&(byAdultDog)&&(small)&&(!medium)&&(!big)) {
-            p = p.filter((prod) => ((prod.Age===2)&& ((prod.Taglia===1)||(prod.Taglia===null))));
-          }
-          else if ((!byPuppyDog)&&(byAdultDog)&&(!small)&&(medium)&&(!big)) {
-            p = p.filter((prod) => ((prod.Age===2) && ((prod.Taglia===2)||(prod.Taglia===null))));
-          }
-          else if ((!byPuppyDog)&&(byAdultDog)&&(!small)&&(!medium)&&(big)) {
-            p = p.filter((prod) =>( (prod.Age===2) && ((prod.Taglia===3)||(prod.Taglia===null))));
-          }
-          else if (small) {
-            p = p.filter((prod) => prod.Taglia===1);
-          }
-          else if (medium) {
-            p = p.filter((prod) =>  prod.Taglia===2);
-          }
-          else if (big) {
-            p = p.filter((prod) => prod.Taglia===3);
-          }
-          
-          else {
-            p = products;
-          }
-        }
+      }
 
+      else if(products[0].Specie===1){
+          if(((byPuppyDog)&&(byAdultDog))||((!byPuppyDog)&&(!byAdultDog))){
+
+            /*filtri per le taglie*/
+            
+            if ((small)&&(!medium)&&(!big))  { //filtri per cani di taglia piccola
+              p = p.filter((prod) => prod.Taglia===1);
+            }
+            else if ((!small)&&(medium)&&(!big))  { //filtri per cani di taglia media
+              p = p.filter((prod) =>  prod.Taglia===2);
+            }
+            else if ((!small)&&(!medium)&&(big))  { //filtri per cani di taglia grande
+              p = p.filter((prod) => prod.Taglia===3);
+            }
+            else if ((small)&&(medium)&&(!big))  { //filtri per cani di taglia piccola e media
+              p = p.filter((prod) => ((prod.Taglia===1)||(prod.Taglia===2)));
+            }
+            else if ((!small)&&(medium)&&(big))  { //filtri per cani di taglia media e grande
+              p = p.filter((prod) =>  ((prod.Taglia===3)||(prod.Taglia===2)));
+            }
+            else if ((small)&&(!medium)&&(big))  { //filtri per cani di taglia grande e piccola
+              p = p.filter((prod) =>  ((prod.Taglia===1)||(prod.Taglia===3)));
+            }
+            else {
+              p = products; //tutti veri o tutti falsi, veri cuccioli e adulti con falsi le taglie, falsi età e veri tutte le taglie
+            }
+
+          }
+          else{
+
+            if ((!byPuppyDog)&&(byAdultDog)&&(!small)&&(!medium)&&(!big)) { //solo filtro adulti
+              p = p.filter((prod) => prod.Age===2);
+            }
+
+            else if ((byPuppyDog)&&(!byAdultDog)&&(!small)&&(!medium)&&(!big)) { //solo filtro cuccioli
+              p = p.filter((prod) => prod.Age===1);
+            }
+
+            /* filtri per i cuccioli*/ 
+
+            else if ((byPuppyDog)&&(!byAdultDog)&&(small)&&(!medium)&&(!big)) { //filtro cuccioli di taglia piccola
+              p = p.filter((prod) => ((prod.Age===1) && ((prod.Taglia===1)||(prod.Taglia===null))));
+            }
+            else if ((byPuppyDog)&&(!byAdultDog)&&(!small)&&(medium)&&(!big)) { //filtro cuccioli di taglia media
+              p = p.filter((prod) => ((prod.Age===1) && ((prod.Taglia===2)||(prod.Taglia===null))));
+            }
+            else if ((byPuppyDog)&&(!byAdultDog)&&(!small)&&(!medium)&&(big)) { //filtro cuccioli di taglia grande
+              p = p.filter((prod) => ((prod.Age===1) && ((prod.Taglia===3)||(prod.Taglia===null))));
+            }
+            else if ((byPuppyDog)&&(!byAdultDog)&&(small)&&(medium)&&(!big)) { //filtro cuccioli di taglia piccola o media
+              p = p.filter((prod) => ((prod.Age===1) && ( ((prod.Taglia===1)||(prod.Taglia===2))||(prod.Taglia===null))));
+            }
+            else if ((byPuppyDog)&&(!byAdultDog)&&(!small)&&(medium)&&(big)) { //filtro cuccioli di taglia media o grande
+              p = p.filter((prod) => ((prod.Age===1) && ( ((prod.Taglia===3)||(prod.Taglia===2))||(prod.Taglia===null))));
+            }
+            else if ((byPuppyDog)&&(!byAdultDog)&&(small)&&(!medium)&&(big)) { //filtro cuccioli di taglia grande o piccola
+              p = p.filter((prod) => ((prod.Age===1) && ( ((prod.Taglia===1)||(prod.Taglia===3))||(prod.Taglia===null))));
+            }
+
+            /* filtri per gli adulti*/ 
+            else if ((!byPuppyDog)&&(byAdultDog)&&(small)&&(!medium)&&(!big)) { //filtro adulti di taglia piccola
+              p = p.filter((prod) => ((prod.Age===2)&& ((prod.Taglia===1)||(prod.Taglia===null))));
+            }
+            else if ((!byPuppyDog)&&(byAdultDog)&&(!small)&&(medium)&&(!big)) {//filtro adulti di taglia media
+              p = p.filter((prod) => ((prod.Age===2) && ((prod.Taglia===2)||(prod.Taglia===null))));
+            }
+            else if ((!byPuppyDog)&&(byAdultDog)&&(!small)&&(!medium)&&(big)) {//filtro adulti di taglia grande
+              p = p.filter((prod) =>( (prod.Age===2) && ((prod.Taglia===3)||(prod.Taglia===null))));
+            }
+            else if ((!byPuppyDog)&&(byAdultDog)&&(small)&&(medium)&&(!big)) { //filtro adulti di taglia piccola e media
+              p = p.filter((prod) => ((prod.Age===2)&& ( ((prod.Taglia===1)||(prod.Taglia===2))||(prod.Taglia===null))));
+            }
+            else if ((!byPuppyDog)&&(byAdultDog)&&(!small)&&(medium)&&(big)) {//filtro adulti di taglia media e grande
+              p = p.filter((prod) => ((prod.Age===2) && ( ((prod.Taglia===3)||(prod.Taglia===2))||(prod.Taglia===null))));
+            }
+            else if ((!byPuppyDog)&&(byAdultDog)&&(small)&&(!medium)&&(big)) {//filtro adulti di taglia grande e piccola
+              p = p.filter((prod) =>( (prod.Age===2) && ( ((prod.Taglia===1)||(prod.Taglia===3))||(prod.Taglia===null))));
+            }
+        }
+    }
 
       else{
-        p=products;
+        p=products; //non sono ne specie 1 ne 2
          }
 
-        return p;
+      return p;
     };
 
     

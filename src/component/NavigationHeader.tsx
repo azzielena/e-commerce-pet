@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import NavBar from './NavBar';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/home/Home';
@@ -21,6 +20,7 @@ const NavigationHeader =({ handleOpen }: Props)=>{
     <>
         <NavBar handleOpen={handleOpen} />
         <Routes > 
+        <Route  path='/contactUs' element={<ContactUs />}/> 
         <Route  path='/' element={<Home />}/>
         <Route  path='/checkout' element={<Checkout />}/>
         <Route  path='/dogfood' element={<DogFood val={"cibocane"}/>}/>
