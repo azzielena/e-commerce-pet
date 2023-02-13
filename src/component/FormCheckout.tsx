@@ -15,7 +15,6 @@ const initialState = {
     address: ''
 }
 
-/*const notify = (msj: string) => toast(msj);*/
 
 const FormCheckout = () => {
     const [show, setShow] = useState(false);
@@ -31,8 +30,31 @@ const FormCheckout = () => {
         e.preventDefault();
         console.log("inviato al server");
 
+        const orderDetails = cartItems.map(({Id, Nome, ...item}) => item);
+
+        if(orderDetails.length > 0){
+            
+            const order: Order = {
+                customer: {
+                    name, email, lastName, address
+                },
+                order_details: orderDetails
+            }
+            
+            const fetchApi = await postData(order);
+            
+            if(!fetchApi.ok){
+                notify('No se pudo procesar la orden...Intentelo nuevamente');
+            }else{
+                notify('Orden realizada exitosamente');
+
+        resetValues();
+        dispatch ({
+          payload:[],
+          type:'CLEAR'
+        });
+
     }
-    
     
     return (
         <div className='col-md-7 col-lg-8'>
