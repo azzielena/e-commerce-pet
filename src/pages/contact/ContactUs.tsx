@@ -1,16 +1,55 @@
 import React from 'react';
-import '../../App.css'
+import { FormEvent, useContext, useState,useRef } from "react";
+import '../../App.css';
+import useForm from "../../hooks/useForm";
+import postMessage from "../../helpers/postMessage";
+import { Message } from '../../types/typeApp';
+import Tooltip from 'react-bootstrap/Tooltip'
+import Overlay from 'react-bootstrap/Overlay';
 
-
+const initialState = {
+  name: '',
+  email: '',
+  message: ''
+}
 function ContactUs() {
+  const {name, email, message, handleInputChange, resetValues } = useForm<Message>(initialState);
+  const target = useRef(null);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    console.log("inviato al server");
+
+  
+        const mex: Message = {
+          name, email, message   
+        }
+        
+        const fetchApi = await postMessage(mex);
+    }
+    
+  
+  
+  
+  
   return (  
-      <form className="formContact">
+      <form className="formContact" autoComplete='off' onSubmit={ handleSubmit }>
 
     <h2 className="h2Contact">CONTATTACI</h2>
-  <p className="pContact">Nome:<input className="inputContact" placeholder="Scrivi il tuo nome qui..." style={{}}></input></p>
-  <p className="pContact">Email:<input className="inputContact"  placeholder="Facci sapere come ricontattarti..."></input></p>
-  <p className="pContact">Messaggio<input className="inputContact"  placeholder="Cosa vorresti dirci..."></input></p>
-  <button className="buttonContact">Invia il messaggio</button>
+  <p className="pContact">Nome:<input value={name} onChange={handleInputChange} name='name' id='name' className="inputContact" placeholder="Scrivi il tuo nome qui..."></input></p>
+  <p className="pContact">Email:<input value={email} onChange={handleInputChange} className="inputContact" name='email' id='email' placeholder="Facci sapere come ricontattarti..."></input></p>
+  <p className="pContact">Messaggio<input value={message} onChange={handleInputChange} className="inputContact" name='message' id='message' placeholder="Cosa vorresti dirci..."></input></p>
+  <><button className="buttonContact" ref={target} onClick={() => setShow(!show)}>Invia il messaggio</button>
+  <Overlay target={target.current} show={show} placement="right">
+        {(props) => (
+          <Tooltip id="overlay-example" {...props}>
+            Abbiamo ricevuto il tuo messaggio, ti ricontatteremo al più presto!
+          </Tooltip>
+        )}
+      </Overlay></>
   
 </form>
 

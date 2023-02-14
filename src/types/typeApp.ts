@@ -115,3 +115,17 @@ export type FilterDogConxt={
  export type dogActionReducer ={
     type : 'FILTER_BY_PUPPY' | 'FILTER_BY_ADULT' | 'FILTER_BY_SMALL' | 'FILTER_BY_MEDIUM' |'FILTER_BY_BIG' |'CLEAR_FILTERS';
 }
+
+export type Message = {
+    name: string;
+    email: string;
+    message: string;
+}
+
+export type News = {
+    name: string;
+    surname: string;
+    email: string;
+    
+}
+
