@@ -36,15 +36,12 @@ const FormCheckout = () => {
         const orderDetails = cartItems.map(({...item}) => item);
 
         if(orderDetails.length > 0){
-            //console.log(orderDetails.map((item)=>console.log(item.Nome)));
             const order: Order = {
                 customer: {
                     name, email, lastName, address
                 },
                 order_details: orderDetails
             }
-            //console.log("consumer: "+order.customer.name)
-            //console.log("valori: "+(order.order_details).map((item)=>console.log(item.Nome)))
 
             const fetchApi = await postData(order);
             

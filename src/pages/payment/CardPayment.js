@@ -3,27 +3,22 @@ import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip'
 import Overlay from 'react-bootstrap/Overlay';
 
 
 function CardPayment() {
+
   const [number, setNumber]=useState('');
   const [name, setName]=useState('');
   const [expiry, setExpiry]=useState('');
   const [cvc, setCvc]=useState('');
   const [focus, setFocus]=useState('');
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  /*const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Ordine Effettuato
-    </Tooltip> );*/
-    const target = useRef(null);
-    
+  const [show, setShow] = useState(false);
+  const [showError, setShowError] = useState(true);
+
+  const target = useRef(null);
  
   return (
     <div>
@@ -93,8 +88,16 @@ function CardPayment() {
       </div>
             <div className="form-actions">
             <>
+            <label hidden={showError} style={{color:"red"}}>Parametri non accettabili, riprova</label> <br></br>
               <button className="btn btn-block " 
-              ref={target} onClick={() => setShow(!show)}
+              ref={target} onClick={() => {
+                if((expiry.length!==4)||(number.length<13)||(number.length>16)||(cvc.length!==3)) { 
+                  setShowError(false)
+                } else{ 
+                  setShowError(true);
+                  setShow(!show);
+                } 
+              }}
               style={{backgroundColor:"#39c010",
               borderRadius: "10%",
               fontFamily: "'Trebuchet MS', sans-serif",
@@ -107,6 +110,7 @@ function CardPayment() {
           <Tooltip id="overlay-example" {...props}>
             Ordine effettuato correttamente :)
           </Tooltip>
+
         )}
       </Overlay></>
           
