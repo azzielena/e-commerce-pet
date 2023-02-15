@@ -7,7 +7,7 @@ import Tooltip from 'react-bootstrap/Tooltip'
 import Overlay from 'react-bootstrap/Overlay';
 
 
-function CardPayment() {
+const CardPayment=({customer, order_details})=> {
 
   const [number, setNumber]=useState('');
   const [name, setName]=useState('');
@@ -19,11 +19,12 @@ function CardPayment() {
   const [showError, setShowError] = useState(true);
 
   const target = useRef(null);
+
+  console.log("name:"+customer.name+" lastName:"+customer.lastName);
  
   return (
     <div>
     <div className="AppPayment">
-      <h1 className="titlePayment" >Inserisci i tuoi dati per effettuare l'acquisto</h1> <br/>
       <Cards 
         number={number}
         name={name}

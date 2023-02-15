@@ -42,7 +42,6 @@ const NavigationHeader =({ handleOpen }: Props)=>{
 
         
         <Route  path='/newsletter' element={<Newsletter />}/>
-        <Route  path='/payment' element={<CardPayment />}/>
         </Routes>
     </>
    

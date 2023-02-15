@@ -10,8 +10,7 @@ function Checkout() {
     <div>
       <Container>
       <div className='py-5 text-center'>
-          <h2>Ultimo passo</h2>
-          <p className='lead'>Per completare l'acquisto inserisci i tuoi dati</p>
+      <h1 className="titlePayment" >Inserisci i tuoi dati per effettuare l'acquisto</h1> <br/>
       </div>
       <Row>
         <FormCheckout /> <OrderSummary />
