@@ -6,10 +6,6 @@ import { Customer, Order } from "../types/typeApp";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import 'react-credit-cards/es/styles-compiled.css';
-import toast, { Toaster } from "react-hot-toast";
-import CardPayment from "../pages/payment/CardPayment";
-import Tooltip from 'react-bootstrap/Tooltip'
-import Overlay from 'react-bootstrap/Overlay';
 
 import Cards from 'react-credit-cards';
 
@@ -214,9 +210,9 @@ const FormCheckout = () => {
           <button className="btn-secondary" onClick={handleClosePopup} style={{width:"90px"}}>
             Annulla
           </button>
-          <button className="btn-secondary" style={{width:"90px"}} onClick={generateOrder}>
+          <Link to="/"><button className="btn-secondary" style={{width:"90px"}} onClick={generateOrder}>
             Confermo
-          </button>
+          </button></Link>
         </Modal.Footer>
       </Modal>
     </>

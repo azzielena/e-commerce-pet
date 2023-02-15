@@ -10,10 +10,12 @@ import { Link } from 'react-router-dom';
 import { getTotalItems } from '../helpers/calculate';
 import { CartContext } from '../context/Context';
 
+
 type Props = {
   handleOpen : (state:boolean) => void;
 }
 
+   
 const NavBar =({ handleOpen }: Props)=>{
 
   const { cartItems } = useContext(CartContext);
@@ -88,7 +90,7 @@ const NavBar =({ handleOpen }: Props)=>{
           </Nav>
           <Nav>
           <Link to="/newsletter" style={{textDecoration:"none"}}><Nav.Link href="action/4" >Iscriviti alla Newsletter</Nav.Link></Link>
-          <Nav.Link href='javascript:window.scrollTo(0,999999);'>Contatti</Nav.Link>
+          <Nav.Link href='javascript:window.scrollTo(0, window.screen.width* window.screen.height)'>Contatti</Nav.Link>
           </Nav>
         
           <FaShoppingCart className="login_menu" onClick={() => handleOpen(true)}  /> 
