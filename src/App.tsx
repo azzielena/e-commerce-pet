@@ -10,9 +10,6 @@ import {  Context } from './context/Context';
 function App() {
   const [show, setShow] = useState(false);
 
-  const [data, setData] = React.useState(null);
-
-
   return (  
     <div>
       <Router> 

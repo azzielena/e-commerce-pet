@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
-import { getSearchParamsForLocation } from 'react-router-dom/dist/dom';
 import '../App.css'
-import Home from '../pages/home/Home';
 import ListAll from './ListProducts/ListAll';
 
 function SearchBar() {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, Offcanvas } from 'react-bootstrap';
-import { FaListUl } from 'react-icons/fa';
+import { Button,  Offcanvas } from 'react-bootstrap';
 import '../App.css'
 import CheckFoodDog from './CheckFoodDog';
 import cane from './img/cane.jpg'

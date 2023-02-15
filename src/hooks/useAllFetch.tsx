@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import getProducts from "../helpers/getData";
 import { AllFetch } from "../types/typeApp";
 
 const useFetch=(val: any)=>{

@@ -1,5 +1,4 @@
 import React from 'react';
-import CheckFoodCat from '../../component/CheckFoodCat';
 import MenuOffCanvasCat from '../../component/MenuOffCanvasCat';
 import { Container } from 'react-bootstrap';
 import ListProducts from '../../component/ListProducts/ListProduct';

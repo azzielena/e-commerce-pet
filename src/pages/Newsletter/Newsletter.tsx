@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../../App.css'
 import zampa from "../../component/img/zampa.jpg"
-import { FormEvent, useContext, useState,useRef } from "react";
+import { FormEvent, useState,useRef } from "react";
 import useForm from "../../hooks/useForm";
 import postNews from "../../helpers/postNews";
 import { News } from '../../types/typeApp';

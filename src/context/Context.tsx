@@ -38,21 +38,14 @@ export const Context = ({ children }: any) => {
             
             
             <CatFilter.Provider value={{ productStateCat, productDispatchCat}}>
-            <DogFilter.Provider value={{  productStateDog, productDispatchDog}}>
-                 {children}
+                <DogFilter.Provider value={{  productStateDog, productDispatchDog}}>
+                    {children}
                  
-        </DogFilter.Provider>
+                </DogFilter.Provider>
             </CatFilter.Provider>
-            
-   
- 
-    </CartContext.Provider> 
-</>
-        
-        
-            
-        
      
-        
+        </CartContext.Provider> 
+        </>
+         
     )
 }

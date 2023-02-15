@@ -7,7 +7,6 @@ import DogFood from '../pages/DogFood/DogFood';
 import CatFood from '../pages/catFood/CatFood';
 import DogAccessories from '../pages/dogAccessories/DogAccessories';
 import CatAccessories from '../pages/catAccessories/CatAccessories';
-import CardPayment from '../pages/payment/CardPayment';
 import ContactUs from '../pages/contact/ContactUs';
 import Newsletter from '../pages/Newsletter/Newsletter';
 
@@ -39,8 +38,6 @@ const NavigationHeader =({ handleOpen }: Props)=>{
         <Route  path='/dogaccessories/guinzaglio' element={<DogAccessories val={"guinzaglio"} />}/>
         <Route  path='/dogaccessories/collare' element={<DogAccessories val={"collare"} />}/>
         <Route  path='/dogaccessories/ciotola' element={<DogAccessories val={"ciotolacane"} />}/>
-
-        
         <Route  path='/newsletter' element={<Newsletter />}/>
         </Routes>
     </>

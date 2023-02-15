@@ -4,7 +4,6 @@ import logo from './img/petstore.jpg'
 import secondImg from './img/news2.jpg'
 import thirdImg from './img/contattoImg.png'
 import fourthImg from './img/banner1.png'
-import fifthImg from './img/banner2.jpg'
 
 
 function HomeImageScroll() {

@@ -61,20 +61,6 @@ export type CartItem = {
     Img: string;
     amount:number;
 }
-/*
-export type CartItem = {
-    Id:number;
-    Nome: string;
-    Marca:string;
-    Consistenza:string;
-    Age:number;
-    Taglia:number;
-    Prezzo:number;
-    Kg: number;
-    Img: string;
-    amount:number;
-}
-*/
 
 export type CartActionReducer ={
     payload:any;
