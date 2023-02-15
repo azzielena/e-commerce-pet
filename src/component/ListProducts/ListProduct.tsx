@@ -34,7 +34,6 @@ const ListProducts =({val}:Props)=>{
 
     const trasformProducts=() =>{
       let p = products;
-      products.map((i)=> console.log(i.Specie));
 
       if(products[0].Specie===2){
           if ((!byPuppyCat)&&(byAdultCat)) {
@@ -46,7 +45,6 @@ const ListProducts =({val}:Props)=>{
           }
 
           else {
-            products.map((i)=> console.log(i.Nome));
             p = products;
           }
       }

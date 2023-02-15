@@ -22,9 +22,6 @@ const ListAccessories =({val}:Props)=>{
     }
   
     if(isLoading){return <h1>Caricando...</h1>}
-    console.log("bbb:"+products[0].Nome);
-
-  
 
   return (  
     <>

@@ -13,28 +13,21 @@ const initialState = {
   message: ''
 }
 function ContactUs() {
-  const {name, email, message, handleInputChange, resetValues } = useForm<Message>(initialState);
+  const {name, email, message, handleInputChange } = useForm<Message>(initialState);
   const target = useRef(null);
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("inviato al server");
 
-  
-        const mex: Message = {
+    const mex: Message = {
           name, email, message   
         }
         
-        const fetchApi = await postMessage(mex);
+        await postMessage(mex);
+
     }
     
-  
-  
-  
-  
   return (  
       <form className="formContact" autoComplete='off' onSubmit={ handleSubmit }>
 

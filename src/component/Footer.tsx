@@ -8,16 +8,30 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (  
-<div>
+<div id="footerContact"> 
   <div className="footer">
-    <div style={{float: 'left'}}><FaInstagram /> <FaFacebook /> @petStore </div> 
+    <div style={{float: 'left'}}>
+      <FaInstagram /> <FaFacebook /> @petStore 
+    </div> 
     <div style={{textAlign:"center"}}> 
-    Contacts: &emsp;&emsp; <FaPhone />+39 3391028431 &emsp;&emsp; <FaMailBulk/> petStore@gmail.com &emsp;&emsp; 
-    <Link to="/contactUs" style={{textDecoration:"none"}}><a href="action/4" >Invia un messaggio</a></Link>
-      <Link to="/"><div style={{float: 'right'}}><a href="action/5" >PetStore</a>
+    Contacts: &emsp;&emsp; 
+    <FaPhone />+39 3391028431 &emsp;&emsp; 
+    <FaMailBulk/> petStore@gmail.com &emsp;&emsp; 
+    <Link to="/contactUs" style={{textDecoration:"none"}} onClick={()=>{
+        let f=document.getElementById("nav");
+        f?.scrollIntoView(true);
+    }}> 
+    Invia un messaggio
+    </Link>
+    <Link to="/" style={{textDecoration:"none"}} onClick={()=>{
+        let f=document.getElementById("nav");
+        f?.scrollIntoView(true);
+    }}>
+      <div style={{float: 'right'}}>
+        PetStore
         <span>&copy; 2023 </span> 
       </div>
-      </Link>
+    </Link>
     </div>  
     </div>
   </div>

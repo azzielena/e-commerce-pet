@@ -30,7 +30,7 @@ const FormCheckout = () => {
 
     const [showPopup, setShowPopup] = useState(false);
     const handleClosePopup = () => setShowPopup(false);
-    const handleShowPopup = () => setShowPopup(true);
+    //const handleShowPopup = () => setShowPopup(true);
     
     const [showError, setShowError] = useState(true); //per i campi vuoti 
     const [showEmptyCart, setShowEmptyCart] = useState(true); //per il carrello vuoto
@@ -41,15 +41,12 @@ const FormCheckout = () => {
 
     const viewPopup=async (e: FormEvent) =>{
         e.preventDefault();
-        console.log("faccio controlli");
 
         if((name.length===0)||(email.length===0)||(lastName.length===0)||(address.length===0)){
             setShowError(false);
         }
         else{
-            console.log("controllo campi passato, ora carta")
             if((expiry.length!==4)||(number.length<13)||(number.length>16)||(cvc.length!==3)) { 
-                console.log("errore parametri carta");
                 setShowErrorCard(false);
                 setShowError(true);
                 
@@ -89,13 +86,11 @@ const FormCheckout = () => {
         }else{
             console.log("Ordine generato correttamente");
             resetValues();
-
             dispatch ({
             payload:[],
             type:'CLEAR'
             });
-            //bisogna tornare alla home
-
+            
         }
     }
     
@@ -193,13 +188,13 @@ const FormCheckout = () => {
       </form>
     </div> 
     </div>         <>
-      <label hidden={showError} style={{color:"red"}}>Compila tutti i campi</label> <br></br>
-      <label hidden={showErrorCard} style={{color:"red"}}>Parametri non accettabili, riprova</label> <br></br>         
+      <h4 hidden={showError} style={{color:"red", textAlign:"center", fontSize:"17px"}}>Compila tutti i campi </h4> 
+      <h4 hidden={showErrorCard} style={{color:"red", textAlign:"center", fontSize:"17px"}}>Parametri della carta non accettabili, riprova</h4>      
       <button onClick={viewPopup} className='btnAddCart'>
       Effettua l'ordine
       </button>
       <br></br>
-      <label hidden={showEmptyCart} style={{color:"red"}}>Carrello vuoto</label> 
+      <h4 hidden={showEmptyCart} style={{color:"red", textAlign:"center", fontSize:"17px"}}>Carrello vuoto</h4> 
 
       <Modal show={showPopup} onHide={handleClosePopup}>
         <Modal.Header closeButton>

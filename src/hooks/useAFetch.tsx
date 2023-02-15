@@ -8,13 +8,10 @@ const useAFetch=(val:any)=>{
         isLoading: true,
         isError: false
     });
-    
-    console.log("aaa"+JSON.stringify(val)); //arriva o ' ' o 'gioco'
 
       useEffect(()=>{
         
         if (JSON.stringify(val)==='"allcat"'){
-            console.log("cc "+JSON.stringify(val));
           fetch("/getCatAccessories")
             .then((res) => res.json())
             .then((data) => setData({products:data,
@@ -33,7 +30,6 @@ const useAFetch=(val:any)=>{
           }
 
         else if(JSON.stringify(val)==='"giocogatto"'){
-            console.log("siamo nei giochi");
             fetch("/getCatGame")
             .then((res) => res.json())
             .then((data) => setData({products:data,
@@ -42,7 +38,6 @@ const useAFetch=(val:any)=>{
         }
 
         else if(JSON.stringify(val)==='"tiragraffi"'){
-            console.log("siamo nei tiragraffi");
             fetch("/getCatTiragraffi")
             .then((res) => res.json())
             .then((data) => setData({products:data,

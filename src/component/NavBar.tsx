@@ -21,7 +21,7 @@ const NavBar =({ handleOpen }: Props)=>{
   const { cartItems } = useContext(CartContext);
 
   return (  
-    <Navbar collapseOnSelect expand="lg"  style={{backgroundColor:"#39c010"}}>
+    <Navbar id="nav" collapseOnSelect expand="lg"  style={{backgroundColor:"#39c010"}}>
       <Container>
         <Link to='/'>  <img
               alt="home"
@@ -89,8 +89,14 @@ const NavBar =({ handleOpen }: Props)=>{
             </NavDropdown>
           </Nav>
           <Nav>
-          <Link to="/newsletter" style={{textDecoration:"none"}}><Nav.Link href="action/4" >Iscriviti alla Newsletter</Nav.Link></Link>
-          <Nav.Link href='javascript:window.scrollTo(0, window.screen.width* window.screen.height)'>Contatti</Nav.Link>
+          <Link className="nav-link" to="/newsletter" style={{textDecoration:"none"}}>
+            Iscriviti alla Newsletter
+          </Link>
+          <Nav.Link href="#action/4.7" onClick={()=>{
+            let f=document.getElementById("footerContact");
+            f?.scrollIntoView(false);
+            }}>
+              Contatti</Nav.Link>
           </Nav>
         
           <FaShoppingCart className="login_menu" onClick={() => handleOpen(true)}  /> 

@@ -7,7 +7,7 @@ const useFetch=(val: any)=>{
         isLoading: true,
         isError: false
     });
-    console.log("j:"+JSON.stringify(val));
+    
     useEffect(()=>{
 
      if(JSON.stringify(val)==='"all"'){
@@ -19,7 +19,7 @@ const useFetch=(val: any)=>{
             isError:false}));}
     
 
-  }, []);
+  }, [val]);
     
     return data;
        

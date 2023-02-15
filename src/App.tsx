@@ -11,7 +11,7 @@ function App() {
   const [show, setShow] = useState(false);
 
   return (  
-    <div>
+    
       <Router> 
         <Context>
         <NavigationHeader handleOpen={ setShow }/>
@@ -19,8 +19,7 @@ function App() {
         </Context>
         <Footer />
         </Router>
-        
-    </div>
+     
   );
 }
 

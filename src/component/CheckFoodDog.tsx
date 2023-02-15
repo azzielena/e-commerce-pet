@@ -1,6 +1,5 @@
 import Form from 'react-bootstrap/Form';
 import React, { useContext } from 'react';
-import Button from 'react-bootstrap/Button';
 import { DogFilter } from '../context/Context';
 
 function CheckFoodDog() {

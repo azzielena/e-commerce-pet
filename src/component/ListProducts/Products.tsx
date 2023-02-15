@@ -1,5 +1,3 @@
-
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 import { ProductItem } from '../../types/typeApp';
 import '../../App.css'

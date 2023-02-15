@@ -17,21 +17,18 @@ const initialState = {
 
 function Newsletter() {
 
-  const {name, surname, email, handleInputChange, resetValues } = useForm<News>(initialState);
+  const {name, surname, email, handleInputChange } = useForm<News>(initialState);
   const target = useRef(null);
   const [show, setShow] = useState(false);
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("inviato al server");
-
-  
-        const news: News = {
+    const news: News = {
           name, surname, email 
         }
         
-        const fetchApi = await postNews(news);
+         await postNews(news);
     }
-    //console.log("siamo nel post use");  
+    
   return (  
     <div className="pop-up">
     <div className="contentNewsletter">
