@@ -78,20 +78,15 @@ const FormCheckout = () => {
             },
             order_details: orderDetails
         }
-
-        const fetchApi = await postData(order);
-        
-        if(!fetchApi.ok){
-            console.log("errore, riprova")
-        }else{
-            console.log("Ordine generato correttamente");
-            resetValues();
-            dispatch ({
+        resetValues();
+            
+        dispatch ({
             payload:[],
             type:'CLEAR'
-            });
-            
-        }
+        });
+
+        await postData(order);
+        
     }
     
     return (
@@ -128,7 +123,7 @@ const FormCheckout = () => {
         focused={focus}
         />
       
-      <form className="formCards">
+      <div className="formCards" >
         <div >
           <input 
             className="inputCards"
@@ -181,11 +176,8 @@ const FormCheckout = () => {
 
       </div>
       </div>
-            <div className="form-actions">
-        
-          
+            
             </div>
-      </form>
     </div> 
     </div>         <>
       <h4 hidden={showError} style={{color:"red", textAlign:"center", fontSize:"17px"}}>Compila tutti i campi </h4> 
@@ -205,7 +197,10 @@ const FormCheckout = () => {
           <button className="btn-secondary" onClick={handleClosePopup} style={{width:"90px"}}>
             Annulla
           </button>
-          <Link to="/"><button className="btn-secondary" style={{width:"90px"}} onClick={generateOrder}>
+          <Link to="/" onClick={()=>{
+        let f=document.getElementById("nav");
+        f?.scrollIntoView(true);
+    }}><button className="btn-secondary" style={{width:"90px"}} onClick={generateOrder}>
             Confermo
           </button></Link>
         </Modal.Footer>
