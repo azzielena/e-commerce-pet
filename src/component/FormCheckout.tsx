@@ -72,11 +72,17 @@ const FormCheckout = () => {
 
     const generateOrder= async ()=>{
         const orderDetails = cartItems.map(({...item}) => item);
+        let priceTot:number=0;
+        for(let x:number=0;x<cartItems.length;x++){
+          priceTot=priceTot+cartItems[x].Prezzo
+        }
+        
         const order:Order = {
             customer: {
                 name, email, lastName, address
             },
-            order_details: orderDetails
+            order_details: orderDetails,
+            price: priceTot
         }
         resetValues();
             

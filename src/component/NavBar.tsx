@@ -37,55 +37,51 @@ const NavBar =({ handleOpen }: Props)=>{
           <Nav className="me-auto" style={{fontSize: "20px"}}>
 
             <NavDropdown title="Cibo per cani" id="collasible-nav-dropdown" >
-              <Link to='/dogfood/umido' > 
-              <NavDropdown.Item href="/dogfood" >Cibo umido</NavDropdown.Item>
-              </Link>
               
-              <Link to='/dogfood/secco' >
-              <NavDropdown.Item href="#action/3.3">Cibo secco</NavDropdown.Item>
-              </Link>
+              <NavDropdown.Item href="/dogfood/umido" >Cibo umido</NavDropdown.Item>
+              
+              <NavDropdown.Item href="/dogfood/secco">Cibo secco</NavDropdown.Item>
 
               <NavDropdown.Divider />
               
-              <Link to='/dogfood' >
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="/dogfood">
                 Visualizza tutti
               </NavDropdown.Item>
-              </Link>
+              
             </NavDropdown>
 
             <NavDropdown title="Cibo per gatti" id="collasible-nav-dropdown">
-              <Link to='/catfood/umido'><NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="/catfood/umido">
                 Cibo umido
-              </NavDropdown.Item></Link>
-              <Link to='/catfood/secco'><NavDropdown.Item href="#action/3.3">Cibo secco</NavDropdown.Item></Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/catfood/secco">Cibo secco</NavDropdown.Item>
               <NavDropdown.Divider />
-              <Link to='/catfood'><NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="/catfood">
                 Visualizza tutti
-              </NavDropdown.Item></Link>
+              </NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="Accessori per cani" id="collasible-nav-dropdown">
-            <Link to='/dogaccessories/gioco'><NavDropdown.Item href="#action/3.2" >Gioco</NavDropdown.Item></Link>
-            <Link to='/dogaccessories/guinzaglio'><NavDropdown.Item href="#action/3.3">Guinzaglio</NavDropdown.Item></Link>
-            <Link to='/dogaccessories/collare'><NavDropdown.Item href="#action/3.4">Collare</NavDropdown.Item></Link>
-            <Link to='/dogaccessories/ciotola'><NavDropdown.Item href="#action/3.5">Ciotola</NavDropdown.Item></Link>
+            <NavDropdown.Item href="/dogaccessories/gioco" >Gioco</NavDropdown.Item>
+            <NavDropdown.Item href="/dogaccessories/guinzaglio">Guinzaglio</NavDropdown.Item>
+            <NavDropdown.Item href="/dogaccessories/collare">Collare</NavDropdown.Item>
+            <NavDropdown.Item href="/dogaccessories/ciotola">Ciotola</NavDropdown.Item>
               <NavDropdown.Divider />
-              <Link to='/dogaccessories'><NavDropdown.Item href="#action/3.6">
+              <NavDropdown.Item href="/dogaccessories">
                 Visualizza tutti
-              </NavDropdown.Item></Link>
+              </NavDropdown.Item>
             </NavDropdown>
 
 
             <NavDropdown title="Accessori per gatti" id="collasible-nav-dropdown">
-            <Link to='/cataccessories/gioco'><NavDropdown.Item href="#action/3.2">Gioco</NavDropdown.Item></Link>
-            <Link to='/cataccessories/tiragraffi'><NavDropdown.Item href="#action/3.3">Tiragraffi</NavDropdown.Item></Link>
-            <Link to='/cataccessories/lettiera'><NavDropdown.Item href="#action/3.4">Lettiera</NavDropdown.Item></Link>
-            <Link to='/cataccessories/ciotola'><NavDropdown.Item href="#action/3.5">Ciotola</NavDropdown.Item></Link>
+            <NavDropdown.Item href="/cataccessories/gioco">Gioco</NavDropdown.Item>
+            <NavDropdown.Item href="/cataccessories/tiragraffi">Tiragraffi</NavDropdown.Item>
+            <NavDropdown.Item href="/cataccessories/lettiera">Lettiera</NavDropdown.Item>
+            <NavDropdown.Item href="/cataccessories/ciotola">Ciotola</NavDropdown.Item>
               <NavDropdown.Divider />
-              <Link to='/cataccessories'><NavDropdown.Item href="#action/3.6">
+              <NavDropdown.Item href="/cataccessories">
                 Visualizza tutti
-              </NavDropdown.Item></Link>
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>

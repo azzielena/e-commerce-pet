@@ -81,7 +81,8 @@ export type Customer = {
 
 export type Order = {
     customer: Customer,
-    order_details: CartItem[]
+    order_details: CartItem[], 
+    price:number
 }
 
 export type FilterCatConxt={
