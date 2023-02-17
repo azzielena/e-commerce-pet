@@ -44,6 +44,7 @@ const FormCheckout = () => {
 
         if((name.length===0)||(email.length===0)||(lastName.length===0)||(address.length===0)){
             setShowError(false);
+            setShowErrorCard(true);
         }
         else{
             if((expiry.length!==4)||(number.length<13)||(number.length>16)||(cvc.length!==3)) { 

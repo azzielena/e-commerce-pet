@@ -36,52 +36,52 @@ const NavBar =({ handleOpen }: Props)=>{
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" style={{fontSize: "20px"}}>
 
-            <NavDropdown title="Cibo per cani" id="collasible-nav-dropdown" >
+           
+          <NavDropdown title="Cibo per cani" id="collasible-nav-dropdown" >
+              <Link to='/dogfood/umido' className="dropdown-item " > 
+              Cibo umido
+              </Link>
               
-              <NavDropdown.Item href="/dogfood/umido" >Cibo umido</NavDropdown.Item>
-              
-              <NavDropdown.Item href="/dogfood/secco">Cibo secco</NavDropdown.Item>
-
+              <Link to='/dogfood/secco' className="dropdown-item " >
+              Cibo secco
+              </Link>
               <NavDropdown.Divider />
               
-              <NavDropdown.Item href="/dogfood">
-                Visualizza tutti
-              </NavDropdown.Item>
+              <Link to='/dogfood' className="dropdown-item " >
               
+                Visualizza tutti
+              
+              </Link>
             </NavDropdown>
-
             <NavDropdown title="Cibo per gatti" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/catfood/umido">
+              <Link to='/catfood/umido' className="dropdown-item ">
                 Cibo umido
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/catfood/secco">Cibo secco</NavDropdown.Item>
+              </Link>
+              <Link to='/catfood/secco' className="dropdown-item ">Cibo secco</Link>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/catfood">
+              <Link to='/catfood' className="dropdown-item ">
                 Visualizza tutti
-              </NavDropdown.Item>
+              </Link>
             </NavDropdown>
-
             <NavDropdown title="Accessori per cani" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/dogaccessories/gioco" >Gioco</NavDropdown.Item>
-            <NavDropdown.Item href="/dogaccessories/guinzaglio">Guinzaglio</NavDropdown.Item>
-            <NavDropdown.Item href="/dogaccessories/collare">Collare</NavDropdown.Item>
-            <NavDropdown.Item href="/dogaccessories/ciotola">Ciotola</NavDropdown.Item>
+            <Link to='/dogaccessories/gioco' className="dropdown-item ">Gioco</Link>
+            <Link to='/dogaccessories/guinzaglio' className="dropdown-item ">Guinzaglio</Link>
+            <Link to='/dogaccessories/collare' className="dropdown-item ">Collare</Link>
+            <Link to='/dogaccessories/ciotola' className="dropdown-item ">Ciotola</Link>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/dogaccessories">
+              <Link to='/dogaccessories' className="dropdown-item ">
                 Visualizza tutti
-              </NavDropdown.Item>
+              </Link>
             </NavDropdown>
-
-
             <NavDropdown title="Accessori per gatti" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/cataccessories/gioco">Gioco</NavDropdown.Item>
-            <NavDropdown.Item href="/cataccessories/tiragraffi">Tiragraffi</NavDropdown.Item>
-            <NavDropdown.Item href="/cataccessories/lettiera">Lettiera</NavDropdown.Item>
-            <NavDropdown.Item href="/cataccessories/ciotola">Ciotola</NavDropdown.Item>
+            <Link to='/cataccessories/gioco' className="dropdown-item ">Gioco</Link>
+            <Link to='/cataccessories/tiragraffi' className="dropdown-item ">Tiragraffi</Link>
+            <Link to='/cataccessories/lettiera' className="dropdown-item ">Lettiera</Link>
+            <Link to='/cataccessories/ciotola' className="dropdown-item ">Ciotola</Link>
+            
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/cataccessories">
-                Visualizza tutti
-              </NavDropdown.Item>
+              <Link to='/cataccessories' className="dropdown-item ">
+                Visualizza tutti</Link>
             </NavDropdown>
           </Nav>
           <Nav>
