@@ -197,7 +197,7 @@ const FormCheckout = () => {
 
       <Modal show={showPopup} onHide={handleClosePopup}>
         <Modal.Header closeButton>
-          <Modal.Title>CONFERMA PAGAMENTO</Modal.Title>
+          <Modal.Title>CONFERMA PAGAMENTO!</Modal.Title>
         </Modal.Header>
         <Modal.Body>Confermi il modulo e procedi al pagamento?</Modal.Body>
         <Modal.Footer>
